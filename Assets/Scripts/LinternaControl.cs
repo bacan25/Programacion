@@ -22,6 +22,12 @@ public class LinternaControl : MonoBehaviour
 
     private void Update()
     {
+        //Borra Playerprefs
+        if (Input.GetKey(KeyCode.Z)) 
+        {
+            PlayerPrefs.DeleteAll(); 
+            Debug.Log("PlayerPrefs pa la mierda"); 
+        }
         if (tieneLinterna)
         {
             if (Input.GetKeyDown(KeyCode.F))
@@ -39,7 +45,7 @@ public class LinternaControl : MonoBehaviour
                 StopRecargarLinterna();
             }
 
-            if (Input.GetKeyDown(KeyCode.T) && bateria > 50)
+            if (Input.GetMouseButtonDown(1) && bateria > 50)
             {
                 StartCoroutine(UsarFlash());
             }
