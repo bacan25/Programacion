@@ -7,29 +7,40 @@ public class CheckpointsController : MonoBehaviour
     //Checkpoints (triggers)
     [SerializeField] GameObject check1;
     [SerializeField] GameObject check2;
-    //[SerializeField] GameObject check3;
-    //[SerializeField] GameObject check4;
+    [SerializeField] GameObject check3;
+    [SerializeField] GameObject check4;
 
-    private bool checkpoint1Pressed;
-    private bool checkpoint2Pressed = false;
+    //Objetos
+    public CollectibleItems key;
+    public CollectibleItems crossb;
+   [SerializeField] GameObject linterna;
+
+    //Booooleanos
+    private bool checkpoint1Pressed = false;
+    [HideInInspector] public bool checkpoint2Pressed = false;
     private bool checkpoint3Pressed = false;
     private bool checkpoint4Pressed = false;
 
     [SerializeField] private GameObject player;
 
     //Primer checkpoint (Por la fogata)
-    [SerializeField] GameObject linterna;
     [SerializeField] GameObject canvaLinterna;
     [SerializeField] GameObject enemyInt;
     [SerializeField] AudioSource campana;
 
     //Segundo checkpoint (Parte de atras)
     [SerializeField] GameObject enemyExt;
-    
+
+    //Final
+    public RutaEnemigo finalEnemy;
+    [SerializeField] GameObject endGame;
+   
+
     void Start()
     {
         //Borra Playerprefs
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
+        //Verificar guardados
         if (PlayerPrefs.HasKey("PlayerPosX"))
         {
             float x = PlayerPrefs.GetFloat("PlayerPosX");
@@ -40,6 +51,8 @@ public class CheckpointsController : MonoBehaviour
 
         checkpoint1Pressed = PlayerPrefs.GetInt("Checkpoint1Pressed", 0) == 1;
         checkpoint2Pressed = PlayerPrefs.GetInt("Checkpoint2Pressed", 0) == 1;
+        checkpoint3Pressed = PlayerPrefs.GetInt("Checkpoint3Pressed", 0) == 1;
+        checkpoint4Pressed = PlayerPrefs.GetInt("Checkpoint4Pressed", 0) == 1;
 
         linterna.SetActive(PlayerPrefs.GetInt("LinternaActive", 0) == 1);
         canvaLinterna.SetActive(PlayerPrefs.GetInt("CanvaLinternaActive", 0) == 1);
@@ -47,25 +60,35 @@ public class CheckpointsController : MonoBehaviour
         enemyInt.SetActive(PlayerPrefs.GetInt("EnemyIntActive", 0) == 1);
         enemyExt.SetActive(PlayerPrefs.GetInt("EnemyExtActive", 0) == 1);
 
-
         if (checkpoint1Pressed)
         {
             check1.SetActive(false);
+        
         }
         if (checkpoint2Pressed)
         {
             check2.SetActive(false);
         }
+        if (checkpoint3Pressed)
+        {
+            check3.SetActive(false);
+        }
+        if (checkpoint4Pressed)
+        {
+            check4.SetActive(false);
+        }
+        
     }
 
     void Update()
     {
-       
+        
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider col)
     {
-        if (other.CompareTag("Player"))
+        //Comprueba que Trigger toco el pana
+        if (col.CompareTag("Player"))
         {
             switch (gameObject.name)
             {
@@ -73,13 +96,19 @@ public class CheckpointsController : MonoBehaviour
                     Checkpoint1();
                     break;
                 case "Checkpoint#2":
-                    Checkpoint2(); 
+                    if(key._hasFlash)
+                    {
+                        Checkpoint2();
+                    }
                     break;
                 case "Checkpoint#3":
                     Checkpoint3();
                     break;
                 case "Checkpoint#4":
                     Checkpoint4();
+                    break;
+                case "InicioFinal":
+                    Final();
                     break;
             }
         }
@@ -89,6 +118,9 @@ public class CheckpointsController : MonoBehaviour
     void Checkpoint1()
     {
         checkpoint1Pressed = true;
+        
+        key.PickFlash();
+
         PlayerPrefs.SetInt("Checkpoint1Pressed", checkpoint1Pressed ? 1 : 0);
 
         PlayerPrefs.SetFloat("PlayerPosX", player.transform.position.x);
@@ -109,6 +141,8 @@ public class CheckpointsController : MonoBehaviour
         campana.Play();
 
         PlayerPrefs.Save();
+
+        
 
     }
     
@@ -135,11 +169,46 @@ public class CheckpointsController : MonoBehaviour
     
     void Checkpoint3()
     {
-        print("Holi3");
+        checkpoint3Pressed = true;
+        PlayerPrefs.SetInt("Checkpoint3Pressed", checkpoint3Pressed ? 1 : 0);
+
+        PlayerPrefs.SetFloat("PlayerPosX", player.transform.position.x);
+        PlayerPrefs.SetFloat("PlayerPosY", player.transform.position.y);
+        PlayerPrefs.SetFloat("PlayerPosZ", player.transform.position.z);
+
+
+        enemyInt.SetActive(true);
+        PlayerPrefs.SetInt("EnemyIntActive", 1);
+
+        enemyExt.SetActive(false);
+        PlayerPrefs.SetInt("EnemyExtActive", 0);
+
+        check3.SetActive(false);
+
+        PlayerPrefs.Save();
+
     }
     
     void Checkpoint4()
     {
-        print("Holi4");
+        checkpoint4Pressed = true;
+        PlayerPrefs.SetInt("Checkpoint4Pressed", checkpoint4Pressed ? 1 : 0);
+
+        PlayerPrefs.SetFloat("PlayerPosX", player.transform.position.x);
+        PlayerPrefs.SetFloat("PlayerPosY", player.transform.position.y);
+        PlayerPrefs.SetFloat("PlayerPosZ", player.transform.position.z);
+        check4.SetActive(false);
+
+        PlayerPrefs.Save();
+    }
+
+    void Final()
+    {
+        endGame.SetActive(true);
+        linterna.SetActive(false);
+        canvaLinterna.SetActive(false);
+        finalEnemy.final = true;
+        finalEnemy.rangoEnemigo = 5000;
+        print("Final activado");
     }
 }

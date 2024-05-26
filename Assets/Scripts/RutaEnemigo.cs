@@ -5,7 +5,7 @@ using UnityEngine.AI;
 public class RutaEnemigo : MonoBehaviour
 {
     GameObject target;
-    [SerializeField] private int rangoEnemigo;
+    public int rangoEnemigo;
     [SerializeField] private Transform[] waypoints;
     [SerializeField] private float moveSpeed;
     [SerializeField] private float agroSpeed;
@@ -16,6 +16,9 @@ public class RutaEnemigo : MonoBehaviour
     private NavMeshAgent navMeshAgent;
     private bool isStunned = false;
     private AudioSource audioSource;  // AudioSource para reproducir los sonidos
+
+    [HideInInspector] public bool final = false;
+    
 
     void Start()
     {
@@ -39,10 +42,16 @@ public class RutaEnemigo : MonoBehaviour
 
     void Update()
     {
+        if(final)
+        {
+            navMeshAgent.speed = agroSpeed;
+            navMeshAgent.SetDestination(target.transform.position);
+        }
+
         if (!isStunned)
         {
             ComportamientoEnemigo();
-        }
+        } 
     }
 
     public int GetRangoEnemigo()

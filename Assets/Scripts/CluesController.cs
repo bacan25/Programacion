@@ -4,11 +4,13 @@ using UnityEngine;
 
 public class CluesController : MonoBehaviour
 {
+    //Mensaje en el UI
     [SerializeField] GameObject clue1Canva;
     [SerializeField] GameObject clue2Canva;
     //[SerializeField] GameObject clue3Canva;
     //[SerializeField] GameObject clue4Canva;
 
+    //Booleanos
     private bool clue1Pressed = false;
     private bool clue2Pressed = false;
     private bool clue3Pressed = false;
@@ -22,14 +24,18 @@ public class CluesController : MonoBehaviour
     //Segundo Checkpoint (Atras)
     [SerializeField] GameObject clue2;
 
-
+    //Tercer Checkpoint (Cobertizo)
     //[SerializeField] GameObject clue3;
+
+    //Final
     //[SerializeField] GameObject clue4;
 
     void Start()
     {
         //Borra Playerprefs
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
+
+        //Verifica los guardados
         clue1Pressed = PlayerPrefs.GetInt("Clue1Pressed", 0) == 1;
 
         if (clue1Pressed)
@@ -50,9 +56,10 @@ public class CluesController : MonoBehaviour
 
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider col)
     {
-        if (other.CompareTag("Player"))
+        //verifica que pista tocó
+        if (col.CompareTag("Player"))
         {
             switch (gameObject.name)
             {
@@ -100,8 +107,8 @@ public class CluesController : MonoBehaviour
 
         Destroy(clue2Canva, 7f);
         
-        if(clue1Canva != null){
-            Destroy(clue1Canva);
+        if(clue1 != null){
+            Destroy(clue1);
         }
         
     }
