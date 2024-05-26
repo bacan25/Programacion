@@ -29,7 +29,7 @@ public class CollectibleItems : MonoBehaviour
     void Start()
     {
         //Borra Playerprefs
-        //PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
 
         //Verifica guardados
         _hasKey = PlayerPrefs.GetInt("HasKey", 0) == 1;

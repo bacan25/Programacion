@@ -39,7 +39,7 @@ public class CheckpointsController : MonoBehaviour
     void Start()
     {
         //Borra Playerprefs
-        //PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
         //Verificar guardados
         if (PlayerPrefs.HasKey("PlayerPosX"))
         {

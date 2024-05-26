@@ -33,7 +33,7 @@ public class CluesController : MonoBehaviour
     void Start()
     {
         //Borra Playerprefs
-        //PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
 
         //Verifica los guardados
         clue1Pressed = PlayerPrefs.GetInt("Clue1Pressed", 0) == 1;
