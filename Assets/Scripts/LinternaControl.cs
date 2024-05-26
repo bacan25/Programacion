@@ -22,12 +22,6 @@ public class LinternaControl : MonoBehaviour
 
     private void Update()
     {
-        //Borra Playerprefs
-        if (Input.GetKey(KeyCode.Z)) 
-        {
-            PlayerPrefs.DeleteAll(); 
-            Debug.Log("PlayerPrefs pa la mierda"); 
-        }
         if (tieneLinterna)
         {
             if (Input.GetKeyDown(KeyCode.F))

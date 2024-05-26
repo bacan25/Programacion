@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class CheckpointsController : MonoBehaviour
 {
-    private bool checkpoint1Pressed = false;
+    //Checkpoints (triggers)
+    [SerializeField] GameObject check1;
+    [SerializeField] GameObject check2;
+    //[SerializeField] GameObject check3;
+    //[SerializeField] GameObject check4;
+
+    private bool checkpoint1Pressed;
     private bool checkpoint2Pressed = false;
     private bool checkpoint3Pressed = false;
     private bool checkpoint4Pressed = false;
@@ -17,9 +23,13 @@ public class CheckpointsController : MonoBehaviour
     [SerializeField] GameObject enemyInt;
     [SerializeField] AudioSource campana;
 
+    //Segundo checkpoint (Parte de atras)
+    [SerializeField] GameObject enemyExt;
     
     void Start()
     {
+        //Borra Playerprefs
+        PlayerPrefs.DeleteAll();
         if (PlayerPrefs.HasKey("PlayerPosX"))
         {
             float x = PlayerPrefs.GetFloat("PlayerPosX");
@@ -29,15 +39,22 @@ public class CheckpointsController : MonoBehaviour
         }
 
         checkpoint1Pressed = PlayerPrefs.GetInt("Checkpoint1Pressed", 0) == 1;
+        checkpoint2Pressed = PlayerPrefs.GetInt("Checkpoint2Pressed", 0) == 1;
 
         linterna.SetActive(PlayerPrefs.GetInt("LinternaActive", 0) == 1);
         canvaLinterna.SetActive(PlayerPrefs.GetInt("CanvaLinternaActive", 0) == 1);
+
         enemyInt.SetActive(PlayerPrefs.GetInt("EnemyIntActive", 0) == 1);
+        enemyExt.SetActive(PlayerPrefs.GetInt("EnemyExtActive", 0) == 1);
 
 
         if (checkpoint1Pressed)
         {
-            gameObject.SetActive(false);
+            check1.SetActive(false);
+        }
+        if (checkpoint2Pressed)
+        {
+            check2.SetActive(false);
         }
     }
 
@@ -56,8 +73,7 @@ public class CheckpointsController : MonoBehaviour
                     Checkpoint1();
                     break;
                 case "Checkpoint#2":
-
-                    Checkpoint2();
+                    Checkpoint2(); 
                     break;
                 case "Checkpoint#3":
                     Checkpoint3();
@@ -67,6 +83,7 @@ public class CheckpointsController : MonoBehaviour
                     break;
             }
         }
+
     }
 
     void Checkpoint1()
@@ -87,7 +104,7 @@ public class CheckpointsController : MonoBehaviour
         enemyInt.SetActive(true);
         PlayerPrefs.SetInt("EnemyIntActive", 1);
 
-        gameObject.SetActive(false);
+        check1.SetActive(false);
 
         campana.Play();
 
@@ -97,7 +114,23 @@ public class CheckpointsController : MonoBehaviour
     
     void Checkpoint2()
     {
-        print("Holi2");
+        checkpoint2Pressed = true;
+        PlayerPrefs.SetInt("Checkpoint2Pressed", checkpoint2Pressed ? 1 : 0);
+
+        PlayerPrefs.SetFloat("PlayerPosX", player.transform.position.x);
+        PlayerPrefs.SetFloat("PlayerPosY", player.transform.position.y);
+        PlayerPrefs.SetFloat("PlayerPosZ", player.transform.position.z);
+
+
+        enemyInt.SetActive(false);
+        PlayerPrefs.SetInt("EnemyIntActive", 0);
+
+        enemyExt.SetActive(true);
+        PlayerPrefs.SetInt("EnemyExtActive", 1);
+
+        check2.SetActive(false);
+
+        PlayerPrefs.Save();
     }
     
     void Checkpoint3()
