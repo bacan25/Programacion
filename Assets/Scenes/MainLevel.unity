@@ -13817,7 +13817,7 @@ MonoBehaviour:
   agroSpeed: 6
   sonidoStun: {fileID: 8300000, guid: 65d2dade8ff35b54a8c82c38886ea2b0, type: 3}
   sonidoEstatica: {fileID: 8300000, guid: f12de4617443021478032862514eb801, type: 3}
-  videoController: {fileID: 0}
+  videoController: {fileID: 1628599684}
   final: 0
 --- !u!136 &1111172966
 CapsuleCollider:
@@ -15423,7 +15423,7 @@ MonoBehaviour:
   agroSpeed: 5
   sonidoStun: {fileID: 8300000, guid: 65d2dade8ff35b54a8c82c38886ea2b0, type: 3}
   sonidoEstatica: {fileID: 8300000, guid: f12de4617443021478032862514eb801, type: 3}
-  videoController: {fileID: 0}
+  videoController: {fileID: 1628599684}
   final: 0
 --- !u!136 &1277271165
 CapsuleCollider:
@@ -19800,7 +19800,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c363bb2bdc1a6a742a96311cd88a11f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videoPlayer: {fileID: 0}
+  videoPlayer: {fileID: 1979574323}
   videoCanvas: {fileID: 1979574321}
 --- !u!1 &1632777569
 GameObject:
@@ -24428,7 +24428,7 @@ VideoPlayer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1979574321}
   m_Enabled: 1
-  m_VideoClip: {fileID: 0}
+  m_VideoClip: {fileID: 32900000, guid: 84468b82947ecdb4398d79a138833682, type: 3}
   m_TargetCameraAlpha: 1
   m_TargetCamera3DLayout: 0
   m_TargetCamera: {fileID: 0}
@@ -24442,15 +24442,13 @@ VideoPlayer:
   m_TimeUpdateMode: 2
   m_PlaybackSpeed: 1
   m_AudioOutputMode: 2
-  m_TargetAudioSources:
-  - {fileID: 0}
-  m_DirectAudioVolumes:
-  - 1
+  m_TargetAudioSources: []
+  m_DirectAudioVolumes: []
   m_Url: 
-  m_EnabledAudioTracks: 01
-  m_DirectAudioMutes: 00
-  m_ControlledAudioTrackCount: 1
-  m_PlayOnAwake: 1
+  m_EnabledAudioTracks: 
+  m_DirectAudioMutes: 
+  m_ControlledAudioTrackCount: 0
+  m_PlayOnAwake: 0
   m_SkipOnDrop: 1
   m_Looping: 0
   m_WaitForFirstFrame: 1
@@ -25940,6 +25938,7 @@ MonoBehaviour:
   staminaBar: {fileID: 504847665}
   walkingSound: {fileID: 8300000, guid: 9a40d24453b930a4d9b237a5459f71f6, type: 3}
   runningSound: {fileID: 8300000, guid: 05d337d1f864e374b997548f7fff5be6, type: 3}
+  gravity: -9.81
 --- !u!143 &2079050027
 CharacterController:
   m_ObjectHideFlags: 0
