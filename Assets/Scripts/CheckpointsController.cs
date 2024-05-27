@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CheckpointsController : MonoBehaviour
 {
@@ -13,7 +15,7 @@ public class CheckpointsController : MonoBehaviour
     //Objetos
     public CollectibleItems key;
     public CollectibleItems crossb;
-   [SerializeField] GameObject linterna;
+    [SerializeField] GameObject linterna;
 
     //Booooleanos
     private bool checkpoint1Pressed = false;
@@ -34,12 +36,9 @@ public class CheckpointsController : MonoBehaviour
     //Final
     public RutaEnemigo finalEnemy;
     [SerializeField] GameObject endGame;
-   
 
     void Start()
     {
-        //Borra Playerprefs
-        PlayerPrefs.DeleteAll();
         //Verificar guardados
         if (PlayerPrefs.HasKey("PlayerPosX"))
         {
@@ -63,7 +62,6 @@ public class CheckpointsController : MonoBehaviour
         if (checkpoint1Pressed)
         {
             check1.SetActive(false);
-        
         }
         if (checkpoint2Pressed)
         {
@@ -77,12 +75,11 @@ public class CheckpointsController : MonoBehaviour
         {
             check4.SetActive(false);
         }
-        
     }
 
     void Update()
     {
-        
+        // Aquí podrías agregar lógica si es necesario
     }
 
     private void OnTriggerEnter(Collider col)
@@ -96,7 +93,7 @@ public class CheckpointsController : MonoBehaviour
                     Checkpoint1();
                     break;
                 case "Checkpoint#2":
-                    if(key._hasFlash)
+                    if (key._hasFlash)
                     {
                         Checkpoint2();
                     }
@@ -112,7 +109,6 @@ public class CheckpointsController : MonoBehaviour
                     break;
             }
         }
-
     }
 
     void Checkpoint1()
@@ -126,6 +122,7 @@ public class CheckpointsController : MonoBehaviour
         PlayerPrefs.SetFloat("PlayerPosX", player.transform.position.x);
         PlayerPrefs.SetFloat("PlayerPosY", player.transform.position.y);
         PlayerPrefs.SetFloat("PlayerPosZ", player.transform.position.z);
+        PlayerPrefs.SetString("LastCheckpoint", SceneManager.GetActiveScene().name);
 
         linterna.SetActive(true);
         PlayerPrefs.SetInt("LinternaActive", 1);
@@ -141,9 +138,6 @@ public class CheckpointsController : MonoBehaviour
         campana.Play();
 
         PlayerPrefs.Save();
-
-        
-
     }
     
     void Checkpoint2()
@@ -154,7 +148,7 @@ public class CheckpointsController : MonoBehaviour
         PlayerPrefs.SetFloat("PlayerPosX", player.transform.position.x);
         PlayerPrefs.SetFloat("PlayerPosY", player.transform.position.y);
         PlayerPrefs.SetFloat("PlayerPosZ", player.transform.position.z);
-
+        PlayerPrefs.SetString("LastCheckpoint", SceneManager.GetActiveScene().name);
 
         enemyInt.SetActive(false);
         PlayerPrefs.SetInt("EnemyIntActive", 0);
@@ -175,7 +169,7 @@ public class CheckpointsController : MonoBehaviour
         PlayerPrefs.SetFloat("PlayerPosX", player.transform.position.x);
         PlayerPrefs.SetFloat("PlayerPosY", player.transform.position.y);
         PlayerPrefs.SetFloat("PlayerPosZ", player.transform.position.z);
-
+        PlayerPrefs.SetString("LastCheckpoint", SceneManager.GetActiveScene().name);
 
         enemyInt.SetActive(true);
         PlayerPrefs.SetInt("EnemyIntActive", 1);
@@ -186,7 +180,6 @@ public class CheckpointsController : MonoBehaviour
         check3.SetActive(false);
 
         PlayerPrefs.Save();
-
     }
     
     void Checkpoint4()
@@ -197,6 +190,8 @@ public class CheckpointsController : MonoBehaviour
         PlayerPrefs.SetFloat("PlayerPosX", player.transform.position.x);
         PlayerPrefs.SetFloat("PlayerPosY", player.transform.position.y);
         PlayerPrefs.SetFloat("PlayerPosZ", player.transform.position.z);
+        PlayerPrefs.SetString("LastCheckpoint", SceneManager.GetActiveScene().name);
+
         check4.SetActive(false);
 
         PlayerPrefs.Save();

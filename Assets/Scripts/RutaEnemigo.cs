@@ -11,6 +11,7 @@ public class RutaEnemigo : MonoBehaviour
     [SerializeField] private float agroSpeed;
     [SerializeField] private AudioClip sonidoStun;   // Sonido para cuando el enemigo se stunnea
     [SerializeField] private AudioClip sonidoEstatica;  // Sonido constante de estática
+    [SerializeField] private VideoController videoController; // Referencia al VideoController
 
     private int currentWaypoint;
     private NavMeshAgent navMeshAgent;
@@ -18,7 +19,6 @@ public class RutaEnemigo : MonoBehaviour
     private AudioSource audioSource;  // AudioSource para reproducir los sonidos
 
     [HideInInspector] public bool final = false;
-    
 
     void Start()
     {
@@ -51,7 +51,7 @@ public class RutaEnemigo : MonoBehaviour
         if (!isStunned)
         {
             ComportamientoEnemigo();
-        } 
+        }
     }
 
     public int GetRangoEnemigo()
@@ -64,7 +64,14 @@ public class RutaEnemigo : MonoBehaviour
         float distanceToPlayer = Vector3.Distance(transform.position, target.transform.position);
         if (distanceToPlayer <= rangoEnemigo)
         {
-            AgroMode();
+            if (distanceToPlayer < 1.0f) // Ajusta la distancia según sea necesario
+            {
+                videoController.PlayVideo();
+            }
+            else
+            {
+                AgroMode();
+            }
         }
         else
         {

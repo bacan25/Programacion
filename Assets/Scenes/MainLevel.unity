@@ -13817,6 +13817,7 @@ MonoBehaviour:
   agroSpeed: 6
   sonidoStun: {fileID: 8300000, guid: 65d2dade8ff35b54a8c82c38886ea2b0, type: 3}
   sonidoEstatica: {fileID: 8300000, guid: f12de4617443021478032862514eb801, type: 3}
+  videoController: {fileID: 0}
   final: 0
 --- !u!136 &1111172966
 CapsuleCollider:
@@ -15422,6 +15423,7 @@ MonoBehaviour:
   agroSpeed: 5
   sonidoStun: {fileID: 8300000, guid: 65d2dade8ff35b54a8c82c38886ea2b0, type: 3}
   sonidoEstatica: {fileID: 8300000, guid: f12de4617443021478032862514eb801, type: 3}
+  videoController: {fileID: 0}
   final: 0
 --- !u!136 &1277271165
 CapsuleCollider:
@@ -19689,6 +19691,7 @@ GameObject:
   - component: {fileID: 1628599682}
   - component: {fileID: 1628599681}
   - component: {fileID: 1628599680}
+  - component: {fileID: 1628599684}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -19777,6 +19780,7 @@ RectTransform:
   - {fileID: 2062977593}
   - {fileID: 1104472421}
   - {fileID: 394331476}
+  - {fileID: 1979574322}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -19784,6 +19788,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1628599684
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1628599679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c363bb2bdc1a6a742a96311cd88a11f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  videoPlayer: {fileID: 0}
+  videoCanvas: {fileID: 1979574321}
 --- !u!1 &1632777569
 GameObject:
   m_ObjectHideFlags: 0
@@ -24366,6 +24384,78 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
   m_PrefabInstance: {fileID: 1975836508}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1979574321
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1979574322}
+  - component: {fileID: 1979574323}
+  m_Layer: 5
+  m_Name: Deathscene
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1979574322
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979574321}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1628599683}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!328 &1979574323
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979574321}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 0}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 0}
+  m_TargetTexture: {fileID: 0}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: <noninit>
+  m_RenderMode: 2
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_TimeUpdateMode: 2
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 2
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
+  m_Url: 
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 1
+  m_SkipOnDrop: 1
+  m_Looping: 0
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
+  m_VideoShaders: []
 --- !u!1 &1982876919 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c3c5723b95e2cb048b79fe74fbe087ea, type: 3}
@@ -25977,7 +26067,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d88652fedbeeb14980cea63fadd7dd1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 1277271168}
+  enemies:
+  - {fileID: 1277271168}
+  - {fileID: 1111172969}
   heartbeatAudio: {fileID: 2079050034}
   maxDistance: 20
   minPitch: 0.7

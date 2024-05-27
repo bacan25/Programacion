@@ -20,6 +20,9 @@ public class Movement : MonoBehaviour
     private CharacterController controller;
     private bool isRunning;
 
+    public float gravity = -9.81f;  // Gravedad
+    private float verticalVelocity; // Velocidad vertical
+
     void Start()
     {
         controller = GetComponent<CharacterController>();
@@ -57,7 +60,21 @@ public class Movement : MonoBehaviour
         }
 
         float finalSpeed = isRunning ? runningSpeed : speed;
-        controller.Move(transform.TransformDirection(movement) * finalSpeed * Time.deltaTime);
+
+        // Aplicar gravedad
+        if (controller.isGrounded)
+        {
+            verticalVelocity = -1f; // Pequeña fuerza hacia abajo para mantener el personaje pegado al suelo
+        }
+        else
+        {
+            verticalVelocity += gravity * Time.deltaTime;
+        }
+
+        Vector3 move = transform.TransformDirection(movement) * finalSpeed * Time.deltaTime;
+        move.y = verticalVelocity * Time.deltaTime;
+
+        controller.Move(move);
 
         // Controlar la reproducción del sonido
         if (movement.magnitude > 0)
