@@ -7,28 +7,40 @@ public class CluesController : MonoBehaviour
     //Mensaje en el UI
     [SerializeField] GameObject clue1Canva;
     [SerializeField] GameObject clue2Canva;
-    //[SerializeField] GameObject clue3Canva;
-    //[SerializeField] GameObject clue4Canva;
+    [SerializeField] GameObject clue3Canva;
+    [SerializeField] GameObject clue4Canva;
+    [SerializeField] GameObject clue5Canva;
+    [SerializeField] GameObject clue6Canva;
 
     //Booleanos
     private bool clue1Pressed = false;
     private bool clue2Pressed = false;
     private bool clue3Pressed = false;
     private bool clue4Pressed = false;
+    private bool clue5Pressed = false;
+    private bool clue6Pressed = false;
 
     [SerializeField] private GameObject player;
 
-    //Primer checkpoint (Por la fogata)
+    //Puerta iglesia
     [SerializeField] GameObject clue1;
 
     //Segundo Checkpoint (Atras)
     [SerializeField] GameObject clue2;
 
-    //Tercer Checkpoint (Cobertizo)
-    //[SerializeField] GameObject clue3;
+    //Coche
+    [SerializeField] GameObject clue3;
+
+    //llave
+    [SerializeField] GameObject clue4;
+
+    //checkpoint 3 cobertizo
+    [SerializeField] GameObject clue5;
 
     //Final
-    //[SerializeField] GameObject clue4;
+    [SerializeField] GameObject clue6;
+
+   
 
     void Start()
     {
@@ -37,6 +49,11 @@ public class CluesController : MonoBehaviour
 
         //Verifica los guardados
         clue1Pressed = PlayerPrefs.GetInt("Clue1Pressed", 0) == 1;
+        clue2Pressed = PlayerPrefs.GetInt("Clue2Pressed", 0) == 1;
+        clue3Pressed = PlayerPrefs.GetInt("Clue3Pressed", 0) == 1;
+        clue4Pressed = PlayerPrefs.GetInt("Clue4Pressed", 0) == 1;
+        clue5Pressed = PlayerPrefs.GetInt("Clue5Pressed", 0) == 1;
+        clue6Pressed = PlayerPrefs.GetInt("Clue6Pressed", 0) == 1;
 
         if (clue1Pressed)
         {
@@ -46,6 +63,26 @@ public class CluesController : MonoBehaviour
         if (clue2Pressed)
         {
             clue2.SetActive(false); 
+        }
+
+        if (clue3Pressed)
+        {
+            clue3.SetActive(false); 
+        }
+
+        if (clue4Pressed)
+        {
+            clue4.SetActive(false); 
+        }
+
+        if (clue5Pressed)
+        {
+            clue5.SetActive(false); 
+        }
+
+        if (clue6Pressed)
+        {
+            clue6.SetActive(false); 
         }
     }
 
@@ -74,6 +111,12 @@ public class CluesController : MonoBehaviour
                     break;
                 case "Clue#4":
                     Clue4();
+                    break;
+                case "Clue#5":
+                    Clue5();
+                    break;
+                case "Clue#6":
+                    Clue6();
                     break;
             }
         }
@@ -115,12 +158,58 @@ public class CluesController : MonoBehaviour
     
     void Clue3()
     {
+        clue3Pressed = true;
+        PlayerPrefs.SetInt("Clue3Pressed", clue3Pressed ? 1 : 0);
 
+        clue3Canva.SetActive(true);
+
+        clue3.SetActive(false);
+
+        PlayerPrefs.Save();
+
+        Destroy(clue3Canva, 7f);
     }
     
     void Clue4()
     {
+        clue4Pressed = true;
+        PlayerPrefs.SetInt("Clue4Pressed", clue4Pressed ? 1 : 0);
 
+        clue4Canva.SetActive(true);
+
+        clue4.SetActive(false);
+
+        PlayerPrefs.Save();
+
+        Destroy(clue4Canva, 7f);
+    }
+
+    void Clue5()
+    {
+        clue5Pressed = true;
+        PlayerPrefs.SetInt("Clue5Pressed", clue5Pressed ? 1 : 0);
+
+        clue5Canva.SetActive(true);
+
+        clue5.SetActive(false);
+
+        PlayerPrefs.Save();
+
+        Destroy(clue5Canva, 7f);
+    }
+
+    void Clue6()
+    {
+        clue6Pressed = true;
+        PlayerPrefs.SetInt("Clue6Pressed", clue6Pressed ? 1 : 0);
+
+        clue6Canva.SetActive(true);
+
+        clue6.SetActive(false);
+
+        PlayerPrefs.Save();
+
+        Destroy(clue6Canva, 7f);
     }
    
 }

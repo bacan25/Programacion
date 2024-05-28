@@ -3194,6 +3194,9 @@ MonoBehaviour:
   key: {fileID: 1575059311}
   crossb: {fileID: 553810483}
   linterna: {fileID: 319306827}
+  bateria: {fileID: 958724760}
+  clue3: {fileID: 2036632464}
+  clue4: {fileID: 473744651}
   checkpoint2Pressed: 0
   player: {fileID: 2079050025}
   canvaLinterna: {fileID: 1923938503}
@@ -3610,6 +3613,9 @@ MonoBehaviour:
   key: {fileID: 1575059311}
   crossb: {fileID: 553810483}
   linterna: {fileID: 319306827}
+  bateria: {fileID: 958724760}
+  clue3: {fileID: 2036632464}
+  clue4: {fileID: 473744651}
   checkpoint2Pressed: 0
   player: {fileID: 2079050025}
   canvaLinterna: {fileID: 1923938503}
@@ -5951,6 +5957,85 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a5763d3a47594e54a996de6471645fc7, type: 3}
+--- !u!1 &473744651
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 473744652}
+  - component: {fileID: 473744654}
+  - component: {fileID: 473744653}
+  m_Layer: 0
+  m_Name: Clue#4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &473744652
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473744651}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0.4036397, z: -0, w: 0.91491807}
+  m_LocalPosition: {x: -64.737, y: -4.69, z: 96.623}
+  m_LocalScale: {x: 0.2537582, y: 1, z: 2.5010037}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1480257319}
+  m_LocalEulerAnglesHint: {x: 0, y: -47.612, z: 0}
+--- !u!114 &473744653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473744651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c3ab50f40f0a084da4378d0dd95d134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clue1Canva: {fileID: 1104472418}
+  clue2Canva: {fileID: 394331475}
+  clue3Canva: {fileID: 1759937172}
+  clue4Canva: {fileID: 816291141}
+  clue5Canva: {fileID: 1507782581}
+  clue6Canva: {fileID: 937892044}
+  player: {fileID: 2079050025}
+  clue1: {fileID: 1107755383}
+  clue2: {fileID: 473744651}
+  clue3: {fileID: 2036632464}
+  clue4: {fileID: 473744651}
+  clue5: {fileID: 1473379404}
+  clue6: {fileID: 1715163936}
+--- !u!65 &473744654
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 473744651}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3, y: 1.5, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &476113789 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c3c5723b95e2cb048b79fe74fbe087ea, type: 3}
@@ -8304,9 +8389,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clue1Canva: {fileID: 1104472418}
   clue2Canva: {fileID: 394331475}
+  clue3Canva: {fileID: 1759937172}
+  clue4Canva: {fileID: 816291141}
+  clue5Canva: {fileID: 1507782581}
+  clue6Canva: {fileID: 937892044}
   player: {fileID: 2079050025}
   clue1: {fileID: 1107755383}
   clue2: {fileID: 652510293}
+  clue3: {fileID: 2036632464}
+  clue4: {fileID: 473744651}
+  clue5: {fileID: 1473379404}
+  clue6: {fileID: 1715163936}
 --- !u!65 &652510296
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9704,6 +9797,85 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.25208098, y: 0.28268063, z: 4.1783123}
   m_Center: {x: -0.003277472, y: -0.0040749507, z: 0.96454597}
+--- !u!1 &816291141
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 816291142}
+  - component: {fileID: 816291144}
+  - component: {fileID: 816291143}
+  m_Layer: 5
+  m_Name: Clue4Canva
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &816291142
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816291141}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1628599683}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1.1375, y: -448.91}
+  m_SizeDelta: {x: 1822.8987, y: 182.18}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &816291143
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816291141}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 60
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 6
+    m_MaxSize: 60
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Perfecto. Con esta llave voy a poder abrir la puerta del cobertizo.
+--- !u!222 &816291144
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 816291141}
+  m_CullTransparentMesh: 1
 --- !u!1001 &817638786
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10957,6 +11129,43 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1747683912}
   m_SourcePrefab: {fileID: 100100000, guid: c3c5723b95e2cb048b79fe74fbe087ea, type: 3}
+--- !u!1 &937892044
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 937892045}
+  m_Layer: 5
+  m_Name: Final
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &937892045
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937892044}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2031324944}
+  - {fileID: 1733013096}
+  m_Father: {fileID: 1628599683}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1.1375122, y: -448.91}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &938281690
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11566,6 +11775,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 949885187}
   m_CullTransparentMesh: 1
+--- !u!1 &958724760 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 6adf6975520c38a41ac4813ec384d55b, type: 3}
+  m_PrefabInstance: {fileID: 1406295922}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &959352324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11765,6 +11979,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1064537166}
+  - {fileID: 1406295923}
   m_Father: {fileID: 2079050031}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &963194229
@@ -13719,9 +13934,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   clue1Canva: {fileID: 1104472418}
   clue2Canva: {fileID: 394331475}
+  clue3Canva: {fileID: 1759937172}
+  clue4Canva: {fileID: 816291141}
+  clue5Canva: {fileID: 1507782581}
+  clue6Canva: {fileID: 937892044}
   player: {fileID: 2079050025}
   clue1: {fileID: 1107755383}
   clue2: {fileID: 652510293}
+  clue3: {fileID: 2036632464}
+  clue4: {fileID: 473744651}
+  clue5: {fileID: 1473379404}
+  clue6: {fileID: 1715163936}
 --- !u!65 &1107755386
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -16845,6 +17068,9 @@ MonoBehaviour:
   key: {fileID: 1575059311}
   crossb: {fileID: 553810483}
   linterna: {fileID: 319306827}
+  bateria: {fileID: 958724760}
+  clue3: {fileID: 2036632464}
+  clue4: {fileID: 473744651}
   checkpoint2Pressed: 0
   player: {fileID: 2079050025}
   canvaLinterna: {fileID: 1923938503}
@@ -17297,6 +17523,9 @@ MonoBehaviour:
   key: {fileID: 1575059311}
   crossb: {fileID: 553810483}
   linterna: {fileID: 319306827}
+  bateria: {fileID: 958724760}
+  clue3: {fileID: 2036632464}
+  clue4: {fileID: 473744651}
   checkpoint2Pressed: 0
   player: {fileID: 2079050025}
   canvaLinterna: {fileID: 1923938503}
@@ -17497,6 +17726,84 @@ Transform:
   - {fileID: 553810485}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1406295922
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 963194228}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 6adf6975520c38a41ac4813ec384d55b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.39472613
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6adf6975520c38a41ac4813ec384d55b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.28124836
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6adf6975520c38a41ac4813ec384d55b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.27948138
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6adf6975520c38a41ac4813ec384d55b, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.74
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6adf6975520c38a41ac4813ec384d55b, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.54
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6adf6975520c38a41ac4813ec384d55b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.26
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6adf6975520c38a41ac4813ec384d55b, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.16485862
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6adf6975520c38a41ac4813ec384d55b, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.1523378
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6adf6975520c38a41ac4813ec384d55b, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7157049
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6adf6975520c38a41ac4813ec384d55b, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.66134816
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6adf6975520c38a41ac4813ec384d55b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -85.479
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6adf6975520c38a41ac4813ec384d55b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -154.057
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6adf6975520c38a41ac4813ec384d55b, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6adf6975520c38a41ac4813ec384d55b, type: 3}
+      propertyPath: m_Name
+      value: Bateria
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 6adf6975520c38a41ac4813ec384d55b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6adf6975520c38a41ac4813ec384d55b, type: 3}
+--- !u!4 &1406295923 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 6adf6975520c38a41ac4813ec384d55b, type: 3}
+  m_PrefabInstance: {fileID: 1406295922}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1421512296
 GameObject:
   m_ObjectHideFlags: 0
@@ -17987,6 +18294,85 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.25208098, y: 0.28268063, z: 4.1783123}
   m_Center: {x: -0.003277472, y: -0.0040749507, z: 0.96454597}
+--- !u!1 &1473379404
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1473379405}
+  - component: {fileID: 1473379407}
+  - component: {fileID: 1473379406}
+  m_Layer: 0
+  m_Name: Clue#5
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1473379405
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473379404}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.42757615, z: -0, w: 0.9039794}
+  m_LocalPosition: {x: 28.753, y: 1.74, z: -12.576}
+  m_LocalScale: {x: 1.3185743, y: 1.1666436, z: 1.099925}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1480257319}
+  m_LocalEulerAnglesHint: {x: 0, y: 50.628, z: 0}
+--- !u!114 &1473379406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473379404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c3ab50f40f0a084da4378d0dd95d134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clue1Canva: {fileID: 1104472418}
+  clue2Canva: {fileID: 394331475}
+  clue3Canva: {fileID: 1759937172}
+  clue4Canva: {fileID: 816291141}
+  clue5Canva: {fileID: 1507782581}
+  clue6Canva: {fileID: 937892044}
+  player: {fileID: 2079050025}
+  clue1: {fileID: 1107755383}
+  clue2: {fileID: 652510293}
+  clue3: {fileID: 2036632464}
+  clue4: {fileID: 473744651}
+  clue5: {fileID: 1473379404}
+  clue6: {fileID: 1715163936}
+--- !u!65 &1473379407
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1473379404}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3, y: 1.5, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1477627496
 GameObject:
   m_ObjectHideFlags: 0
@@ -18071,6 +18457,10 @@ Transform:
   m_Children:
   - {fileID: 1107755384}
   - {fileID: 652510294}
+  - {fileID: 2036632465}
+  - {fileID: 473744652}
+  - {fileID: 1473379405}
+  - {fileID: 1715163937}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1486361446
@@ -18318,6 +18708,85 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.25208098, y: 0.28268063, z: 4.1783123}
   m_Center: {x: -0.003277472, y: -0.0040749507, z: 0.96454597}
+--- !u!1 &1507782581
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1507782582}
+  - component: {fileID: 1507782584}
+  - component: {fileID: 1507782583}
+  m_Layer: 5
+  m_Name: Clue5Canva
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1507782582
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507782581}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1628599683}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1.1375, y: -448.91}
+  m_SizeDelta: {x: 1822.8987, y: 182.18}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1507782583
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507782581}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 60
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 6
+    m_MaxSize: 60
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "Perfecto. Con esta palanca podr\xE9 acceder al cuarto de la iglesia."
+--- !u!222 &1507782584
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507782581}
+  m_CullTransparentMesh: 1
 --- !u!1 &1509518278
 GameObject:
   m_ObjectHideFlags: 0
@@ -19955,6 +20424,10 @@ RectTransform:
   - {fileID: 2062977593}
   - {fileID: 1104472421}
   - {fileID: 394331476}
+  - {fileID: 1759937173}
+  - {fileID: 816291142}
+  - {fileID: 1507782582}
+  - {fileID: 937892045}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -21168,6 +21641,85 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.25208098, y: 0.28268063, z: 4.1783123}
   m_Center: {x: -0.003277472, y: -0.0040749507, z: 0.96454597}
+--- !u!1 &1715163936
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1715163937}
+  - component: {fileID: 1715163939}
+  - component: {fileID: 1715163938}
+  m_Layer: 0
+  m_Name: Clue#6
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1715163937
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715163936}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.42757615, z: -0, w: 0.9039794}
+  m_LocalPosition: {x: 0.27, y: 2.62, z: 0.02}
+  m_LocalScale: {x: 0.36790863, y: 1.189551, z: 3.0770402}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1480257319}
+  m_LocalEulerAnglesHint: {x: 0, y: 50.628, z: 0}
+--- !u!114 &1715163938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715163936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c3ab50f40f0a084da4378d0dd95d134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clue1Canva: {fileID: 1104472418}
+  clue2Canva: {fileID: 394331475}
+  clue3Canva: {fileID: 1759937172}
+  clue4Canva: {fileID: 816291141}
+  clue5Canva: {fileID: 1507782581}
+  clue6Canva: {fileID: 937892044}
+  player: {fileID: 2079050025}
+  clue1: {fileID: 1107755383}
+  clue2: {fileID: 652510293}
+  clue3: {fileID: 2036632464}
+  clue4: {fileID: 473744651}
+  clue5: {fileID: 1473379404}
+  clue6: {fileID: 1715163936}
+--- !u!65 &1715163939
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1715163936}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3, y: 1.5, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1717233694 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c3c5723b95e2cb048b79fe74fbe087ea, type: 3}
@@ -21230,6 +21782,85 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.25208098, y: 0.28268063, z: 4.1783123}
   m_Center: {x: -0.003277472, y: -0.0040749507, z: 0.96454597}
+--- !u!1 &1733013095
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1733013096}
+  - component: {fileID: 1733013098}
+  - component: {fileID: 1733013097}
+  m_Layer: 5
+  m_Name: Clue6Canva_1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1733013096
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733013095}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 937892045}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.0000121593475, y: 741}
+  m_SizeDelta: {x: 1822.8987, y: 182.18}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1733013097
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733013095}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.8679245, g: 0.8521687, b: 0.6918832, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 60
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 6
+    m_MaxSize: 60
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Lleva atu hijo muerto y la bateria al coche.
+--- !u!222 &1733013098
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1733013095}
+  m_CullTransparentMesh: 1
 --- !u!1001 &1735614208
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21402,6 +22033,9 @@ MonoBehaviour:
   key: {fileID: 1575059311}
   crossb: {fileID: 553810483}
   linterna: {fileID: 319306827}
+  bateria: {fileID: 958724760}
+  clue3: {fileID: 2036632464}
+  clue4: {fileID: 473744651}
   checkpoint2Pressed: 0
   player: {fileID: 2079050025}
   canvaLinterna: {fileID: 1923938503}
@@ -21600,6 +22234,85 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 895346302}
   m_SourcePrefab: {fileID: 100100000, guid: c3c5723b95e2cb048b79fe74fbe087ea, type: 3}
+--- !u!1 &1759937172
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1759937173}
+  - component: {fileID: 1759937175}
+  - component: {fileID: 1759937174}
+  m_Layer: 5
+  m_Name: Clue3Canva
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1759937173
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759937172}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1628599683}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1.1375, y: -448.91}
+  m_SizeDelta: {x: 1822.8987, y: 182.18}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1759937174
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759937172}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 70
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 6
+    m_MaxSize: 70
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\xBFC\xF3mo? \xBFQui\xE9n le quit\xF3 la bater\xEDa a mi coche?"
+--- !u!222 &1759937175
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1759937172}
+  m_CullTransparentMesh: 1
 --- !u!1 &1766587244 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c3c5723b95e2cb048b79fe74fbe087ea, type: 3}
@@ -25467,6 +26180,86 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.25208098, y: 0.28268063, z: 4.1783123}
   m_Center: {x: -0.003277472, y: -0.0040749507, z: 0.96454597}
+--- !u!1 &2031324943
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2031324944}
+  - component: {fileID: 2031324946}
+  - component: {fileID: 2031324945}
+  m_Layer: 5
+  m_Name: Clue6Canva
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2031324944
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031324943}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 937892045}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0.0000121593475, y: 0}
+  m_SizeDelta: {x: 1822.8987, y: 182.18}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2031324945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031324943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 80
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 6
+    m_MaxSize: 80
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: "\xA1\xA1\xA1\xA1\xA1\xA1\xA1\xA1\xA1\xA1\xA1\xA1\xA1\xA1\xA1\xA1\xA1 MIKEEEE
+    !!!!!!!!!!!!!!!!!!!!"
+--- !u!222 &2031324946
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2031324943}
+  m_CullTransparentMesh: 1
 --- !u!1 &2031863539 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c3c5723b95e2cb048b79fe74fbe087ea, type: 3}
@@ -25498,6 +26291,85 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.25208098, y: 0.28268063, z: 4.1783123}
   m_Center: {x: -0.003277472, y: -0.0040749507, z: 0.96454597}
+--- !u!1 &2036632464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2036632465}
+  - component: {fileID: 2036632467}
+  - component: {fileID: 2036632466}
+  m_Layer: 0
+  m_Name: Clue#3
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!4 &2036632465
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036632464}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: -0.3420201, z: 0, w: 0.9396927}
+  m_LocalPosition: {x: -64.34, y: -4.69, z: 75.35}
+  m_LocalScale: {x: 1.8229755, y: 1, z: 2.5010037}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1480257319}
+  m_LocalEulerAnglesHint: {x: 0, y: -40, z: 0}
+--- !u!114 &2036632466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036632464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c3ab50f40f0a084da4378d0dd95d134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clue1Canva: {fileID: 1104472418}
+  clue2Canva: {fileID: 394331475}
+  clue3Canva: {fileID: 1759937172}
+  clue4Canva: {fileID: 816291141}
+  clue5Canva: {fileID: 1507782581}
+  clue6Canva: {fileID: 937892044}
+  player: {fileID: 2079050025}
+  clue1: {fileID: 1107755383}
+  clue2: {fileID: 652510293}
+  clue3: {fileID: 2036632464}
+  clue4: {fileID: 473744651}
+  clue5: {fileID: 1473379404}
+  clue6: {fileID: 1715163936}
+--- !u!65 &2036632467
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2036632464}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 3, y: 1.5, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2036767416 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c3c5723b95e2cb048b79fe74fbe087ea, type: 3}

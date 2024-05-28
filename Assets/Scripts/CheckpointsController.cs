@@ -16,6 +16,12 @@ public class CheckpointsController : MonoBehaviour
     public CollectibleItems key;
     public CollectibleItems crossb;
     [SerializeField] GameObject linterna;
+    [SerializeField] GameObject bateria;
+    //[SerializeField] GameObject mike;
+
+    //Pistas
+    public GameObject clue3;
+    public GameObject clue4;
 
     //Booooleanos
     private bool checkpoint1Pressed = false;
@@ -114,7 +120,7 @@ public class CheckpointsController : MonoBehaviour
     void Checkpoint1()
     {
         checkpoint1Pressed = true;
-        
+        clue3.SetActive(true);
         key.PickFlash();
 
         PlayerPrefs.SetInt("Checkpoint1Pressed", checkpoint1Pressed ? 1 : 0);
@@ -143,6 +149,7 @@ public class CheckpointsController : MonoBehaviour
     void Checkpoint2()
     {
         checkpoint2Pressed = true;
+        clue4.SetActive(true);
         PlayerPrefs.SetInt("Checkpoint2Pressed", checkpoint2Pressed ? 1 : 0);
 
         PlayerPrefs.SetFloat("PlayerPosX", player.transform.position.x);
@@ -201,6 +208,8 @@ public class CheckpointsController : MonoBehaviour
     {
         endGame.SetActive(true);
         linterna.SetActive(false);
+        bateria.SetActive(true);
+        //mike.SetActive(true);
         canvaLinterna.SetActive(false);
         finalEnemy.final = true;
         finalEnemy.rangoEnemigo = 5000;
