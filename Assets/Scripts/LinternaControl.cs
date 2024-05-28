@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class LinternaControl : MonoBehaviour
 {
-    public RutaEnemigo enemigoScript;
+    public RutaEnemigo[] enemigos; // Asignar todos los enemigos desde el Inspector
     public Light linterna;
     public bool tieneLinterna = false;
     public float bateria = 100.0f;
@@ -105,11 +105,17 @@ public class LinternaControl : MonoBehaviour
         bateria -= 50;
         barraDeBateria.value = bateria / 100.0f;
 
-        // Verificar la distancia al enemigo
-        float distanceToEnemy = Vector3.Distance(transform.position, enemigoScript.transform.position);
-        if (distanceToEnemy <= enemigoScript.GetRangoEnemigo())  // Usando el método getter
+        // Verificar la distancia a todos los enemigos
+        foreach (var enemigo in enemigos)
         {
-            enemigoScript.StunEnemy(8);  // Stun al enemigo por 8 segundos
+            if (enemigo.gameObject.activeInHierarchy)
+            {
+                float distanceToEnemy = Vector3.Distance(transform.position, enemigo.transform.position);
+                if (distanceToEnemy <= enemigo.GetRangoEnemigo())
+                {
+                    enemigo.StunEnemy(8);  // Stun al enemigo por 8 segundos
+                }
+            }
         }
 
         for (int i = 0; i < 3; i++)
@@ -134,6 +140,4 @@ public class LinternaControl : MonoBehaviour
             linterna.enabled = false;
         }
     }
-
-
 }

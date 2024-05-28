@@ -33,12 +33,7 @@ public class Menu : MonoBehaviour
 
     public void ContinueGame()
     {
-        // Carga la escena guardada
-        if (PlayerPrefs.HasKey("LastCheckpoint"))
-        {
-            string checkpointScene = PlayerPrefs.GetString("LastCheckpoint");
-            SceneManager.LoadScene(checkpointScene);
-        }
+        SceneManager.LoadScene(2);
     }
 
     public void Exit()

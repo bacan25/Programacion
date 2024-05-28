@@ -58,6 +58,7 @@
     <Compile Include="Assets\Scripts\LinternaControl.cs" />
     <Compile Include="Assets\Scripts\CluesController.cs" />
     <Compile Include="Assets\Scripts\VideoController.cs" />
+    <Compile Include="Assets\VideoControllerInt.cs" />
     <Compile Include="Assets\Scripts\RutaEnemigo.cs" />
     <Compile Include="Assets\Scripts\EndGame.cs" />
     <Compile Include="Assets\Scripts\Movement.cs" />
