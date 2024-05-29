@@ -20,8 +20,11 @@ public class RutaEnemigo : MonoBehaviour
 
     [HideInInspector] public bool final = false;
 
+    public Animator anim;
+
     void Start()
     {
+        anim = GetComponent<Animator>();
         target = GameObject.FindWithTag("Player");
         navMeshAgent = GetComponent<NavMeshAgent>();
         navMeshAgent.speed = moveSpeed;
@@ -81,6 +84,8 @@ public class RutaEnemigo : MonoBehaviour
 
     void AgroMode()
     {
+        anim.SetBool("isWalking",false);
+        anim.SetBool("isAgro",true);
         navMeshAgent.speed = agroSpeed;
         navMeshAgent.SetDestination(target.transform.position);
     }
@@ -89,6 +94,8 @@ public class RutaEnemigo : MonoBehaviour
     {
         if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
         {
+            anim.SetBool("isWalking",true);
+            anim.SetBool("isAgro",false);
             navMeshAgent.speed = moveSpeed;
             currentWaypoint++;
             if (currentWaypoint >= waypoints.Length)
@@ -112,6 +119,9 @@ public class RutaEnemigo : MonoBehaviour
     IEnumerator Stun(float duration)
     {
         isStunned = true;
+        anim.SetTrigger("isStuned");
+        anim.SetBool("isAgro",false);
+        anim.SetBool("isWalking",false);
         navMeshAgent.isStopped = true;
         audioSource.PlayOneShot(sonidoStun);  // Reproducir el sonido de stun
         yield return new WaitForSeconds(duration);

@@ -113,7 +113,7 @@ public class LinternaControl : MonoBehaviour
                 float distanceToEnemy = Vector3.Distance(transform.position, enemigo.transform.position);
                 if (distanceToEnemy <= enemigo.GetRangoEnemigo())
                 {
-                    enemigo.StunEnemy(8);  // Stun al enemigo por 8 segundos
+                    enemigo.StunEnemy(2);  // Stun al enemigo por 8 segundos
                 }
             }
         }

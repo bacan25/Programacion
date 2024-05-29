@@ -6,8 +6,8 @@ public class CollectibleItems : MonoBehaviour
 {
     //Para especificar de que objeto se verifica el booleano
     [SerializeField] CollectibleItems keyScript;
-    [SerializeField] CollectibleItems crossScript;
-    [SerializeField] CheckpointsController check2;
+    [SerializeField] CollectibleItems doorScript;
+    [SerializeField] CheckpointsController check3;
 
     //triggers
     [SerializeField] GameObject key;
@@ -20,7 +20,7 @@ public class CollectibleItems : MonoBehaviour
     //Boooooleanos
     [HideInInspector] public bool _hasKey;
     [HideInInspector] public bool _hasFlash;
-    private bool _hasCrossbar;
+    public bool _hasCrossbar;
     private bool _extDoorOpened;
     private bool _intDoorOpened;
     
@@ -29,7 +29,7 @@ public class CollectibleItems : MonoBehaviour
     void Start()
     {
         //Borra Playerprefs
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
 
         //Verifica guardados
         _hasKey = PlayerPrefs.GetInt("HasKey", 0) == 1;
@@ -72,8 +72,9 @@ public class CollectibleItems : MonoBehaviour
             switch (gameObject.name)
             {
                 case "Key":
-                    if(check2.checkpoint2Pressed)
+                    if(check3.checkpoint2Pressed)
                     {
+                       print("aja ve");
                         PickKey();
                     }
                     break;
@@ -87,7 +88,7 @@ public class CollectibleItems : MonoBehaviour
                     }
                     break;
                 case "DoorInt":
-                    if(crossScript._hasCrossbar)
+                    if(doorScript._hasCrossbar)
                     {
                         OpenIntDoor();
                     }

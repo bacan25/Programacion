@@ -11,8 +11,10 @@ public class CluesController : MonoBehaviour
     [SerializeField] GameObject clue4Canva;
     [SerializeField] GameObject clue5Canva;
     [SerializeField] GameObject clue6Canva;
+    [SerializeField] GameObject clue0Canva;
 
     //Booleanos
+    private bool clue0Pressed = false;
     private bool clue1Pressed = false;
     private bool clue2Pressed = false;
     private bool clue3Pressed = false;
@@ -22,6 +24,7 @@ public class CluesController : MonoBehaviour
 
     [SerializeField] private GameObject player;
 
+    [SerializeField] GameObject clue0;
     //Puerta iglesia
     [SerializeField] GameObject clue1;
 
@@ -45,15 +48,21 @@ public class CluesController : MonoBehaviour
     void Start()
     {
         //Borra Playerprefs
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
 
         //Verifica los guardados
+        clue0Pressed = PlayerPrefs.GetInt("Clue0Pressed", 0) == 1;
         clue1Pressed = PlayerPrefs.GetInt("Clue1Pressed", 0) == 1;
         clue2Pressed = PlayerPrefs.GetInt("Clue2Pressed", 0) == 1;
         clue3Pressed = PlayerPrefs.GetInt("Clue3Pressed", 0) == 1;
         clue4Pressed = PlayerPrefs.GetInt("Clue4Pressed", 0) == 1;
         clue5Pressed = PlayerPrefs.GetInt("Clue5Pressed", 0) == 1;
         clue6Pressed = PlayerPrefs.GetInt("Clue6Pressed", 0) == 1;
+
+        if (clue0Pressed)
+        {
+            clue0.SetActive(false); 
+        }
 
         if (clue1Pressed)
         {
@@ -100,6 +109,9 @@ public class CluesController : MonoBehaviour
         {
             switch (gameObject.name)
             {
+                case "Clue#0":
+                    Clue0();
+                    break;
                 case "Clue#1":
                     Clue1();
                     break;
@@ -120,6 +132,17 @@ public class CluesController : MonoBehaviour
                     break;
             }
         }
+    }
+
+    void Clue0()
+    {
+        clue0Pressed = true;
+        PlayerPrefs.SetInt("Clue0Pressed", clue0Pressed ? 1 : 0);
+        clue0Canva.SetActive(true);
+
+        clue0.SetActive(false);
+
+        Destroy(clue0Canva, 7f);
     }
 
     void Clue1()

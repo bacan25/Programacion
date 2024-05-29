@@ -17,7 +17,7 @@ public class CheckpointsController : MonoBehaviour
     public CollectibleItems crossb;
     [SerializeField] GameObject linterna;
     [SerializeField] GameObject bateria;
-    //[SerializeField] GameObject mike;
+    [SerializeField] GameObject mike;
 
     //Pistas
     public GameObject clue3;
@@ -25,7 +25,7 @@ public class CheckpointsController : MonoBehaviour
 
     //Booooleanos
     private bool checkpoint1Pressed = false;
-    [HideInInspector] public bool checkpoint2Pressed = false;
+    [HideInInspector]public bool checkpoint2Pressed = false;
     private bool checkpoint3Pressed = false;
     private bool checkpoint4Pressed = false;
 
@@ -34,6 +34,7 @@ public class CheckpointsController : MonoBehaviour
     //Primer checkpoint (Por la fogata)
     [SerializeField] GameObject canvaLinterna;
     [SerializeField] GameObject enemyInt;
+    [SerializeField] GameObject lucesCoche;
     [SerializeField] AudioSource campana;
 
     //Segundo checkpoint (Parte de atras)
@@ -42,16 +43,26 @@ public class CheckpointsController : MonoBehaviour
     //Final
     public RutaEnemigo finalEnemy;
     [SerializeField] GameObject endGame;
+    [SerializeField] GameObject triggerFinal;
 
-    void Start()
+    void Awake()
     {
-        //Verificar guardados
         if (PlayerPrefs.HasKey("PlayerPosX"))
         {
             float x = PlayerPrefs.GetFloat("PlayerPosX");
             float y = PlayerPrefs.GetFloat("PlayerPosY");
             float z = PlayerPrefs.GetFloat("PlayerPosZ");
             player.transform.position = new Vector3(x, y, z);
+        }
+    }
+    void Start()
+    {
+        //Verificar guardados
+        
+
+        if(PlayerPrefs.HasKey("LucesActive"))
+        {
+            lucesCoche.SetActive(PlayerPrefs.GetInt("LucesActive", 0) == 1);
         }
 
         checkpoint1Pressed = PlayerPrefs.GetInt("Checkpoint1Pressed", 0) == 1;
@@ -61,6 +72,7 @@ public class CheckpointsController : MonoBehaviour
 
         linterna.SetActive(PlayerPrefs.GetInt("LinternaActive", 0) == 1);
         canvaLinterna.SetActive(PlayerPrefs.GetInt("CanvaLinternaActive", 0) == 1);
+        clue4.SetActive(PlayerPrefs.GetInt("Clue4", 0) == 1);
 
         enemyInt.SetActive(PlayerPrefs.GetInt("EnemyIntActive", 0) == 1);
         enemyExt.SetActive(PlayerPrefs.GetInt("EnemyExtActive", 0) == 1);
@@ -133,6 +145,9 @@ public class CheckpointsController : MonoBehaviour
         linterna.SetActive(true);
         PlayerPrefs.SetInt("LinternaActive", 1);
 
+        lucesCoche.SetActive(false);
+        PlayerPrefs.SetInt("LucesActive", 0);
+
         canvaLinterna.SetActive(true);
         PlayerPrefs.SetInt("CanvaLinternaActive", 1);
 
@@ -150,10 +165,12 @@ public class CheckpointsController : MonoBehaviour
     {
         checkpoint2Pressed = true;
         clue4.SetActive(true);
+        PlayerPrefs.SetInt("Clue4", 1);
+
         PlayerPrefs.SetInt("Checkpoint2Pressed", checkpoint2Pressed ? 1 : 0);
 
         PlayerPrefs.SetFloat("PlayerPosX", player.transform.position.x);
-        PlayerPrefs.SetFloat("PlayerPosY", player.transform.position.y);
+        PlayerPrefs.SetFloat("PlayerPosY", player.transform.position.y + 2);
         PlayerPrefs.SetFloat("PlayerPosZ", player.transform.position.z);
         PlayerPrefs.SetString("LastCheckpoint", SceneManager.GetActiveScene().name);
 
@@ -209,10 +226,11 @@ public class CheckpointsController : MonoBehaviour
         endGame.SetActive(true);
         linterna.SetActive(false);
         bateria.SetActive(true);
-        //mike.SetActive(true);
+        mike.SetActive(true);
         canvaLinterna.SetActive(false);
         finalEnemy.final = true;
         finalEnemy.rangoEnemigo = 5000;
         print("Final activado");
+        triggerFinal.SetActive(false);
     }
 }
