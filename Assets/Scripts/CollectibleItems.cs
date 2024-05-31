@@ -7,7 +7,11 @@ public class CollectibleItems : MonoBehaviour
     //Para especificar de que objeto se verifica el booleano
     [SerializeField] CollectibleItems keyScript;
     [SerializeField] CollectibleItems doorScript;
+    [SerializeField] CollectibleItems crossScript;
+
+
     [SerializeField] CheckpointsController check3;
+    [SerializeField] CheckpointsController check2;
 
     //triggers
     [SerializeField] GameObject key;
@@ -20,6 +24,8 @@ public class CollectibleItems : MonoBehaviour
     //Boooooleanos
     [HideInInspector] public bool _hasKey;
     [HideInInspector] public bool _hasFlash;
+
+    
     public bool _hasCrossbar;
     private bool _extDoorOpened;
     private bool _intDoorOpened;
@@ -72,7 +78,7 @@ public class CollectibleItems : MonoBehaviour
             switch (gameObject.name)
             {
                 case "Key":
-                    if(check3.checkpoint2Pressed)
+                    if(check3.checkpoint2Pressed || check2.checkpoint2Pressed)
                     {
                        print("aja ve");
                         PickKey();
@@ -82,13 +88,13 @@ public class CollectibleItems : MonoBehaviour
                     PickCrossbar(); 
                     break;
                 case "DoorExt":
-                    if(keyScript._hasKey)
+                    if(keyScript._hasKey || crossScript._hasKey)
                     {
                         OpenExtDoor();
                     }
                     break;
                 case "DoorInt":
-                    if(doorScript._hasCrossbar)
+                    if(doorScript._hasCrossbar || crossScript._hasCrossbar)
                     {
                         OpenIntDoor();
                     }
@@ -119,7 +125,7 @@ public class CollectibleItems : MonoBehaviour
     void PickCrossbar()
     {
         _hasCrossbar = true;
-        PlayerPrefs.SetInt("HasCrossbar", _hasKey ? 1 : 0);
+        PlayerPrefs.SetInt("HasCrossbar", _hasCrossbar ? 1 : 0);
         crossbar.SetActive(false);
         _hasCrossbar = true;
         print("crossbar entro al chat");

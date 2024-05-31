@@ -25,7 +25,7 @@ public class CheckpointsController : MonoBehaviour
 
     //Booooleanos
     private bool checkpoint1Pressed = false;
-    [HideInInspector]public bool checkpoint2Pressed = false;
+    public bool checkpoint2Pressed = false;
     private bool checkpoint3Pressed = false;
     private bool checkpoint4Pressed = false;
 
@@ -170,7 +170,7 @@ public class CheckpointsController : MonoBehaviour
         PlayerPrefs.SetInt("Checkpoint2Pressed", checkpoint2Pressed ? 1 : 0);
 
         PlayerPrefs.SetFloat("PlayerPosX", player.transform.position.x);
-        PlayerPrefs.SetFloat("PlayerPosY", player.transform.position.y + 2);
+        PlayerPrefs.SetFloat("PlayerPosY", player.transform.position.y + 5);
         PlayerPrefs.SetFloat("PlayerPosZ", player.transform.position.z);
         PlayerPrefs.SetString("LastCheckpoint", SceneManager.GetActiveScene().name);
 
