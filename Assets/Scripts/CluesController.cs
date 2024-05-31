@@ -12,6 +12,8 @@ public class CluesController : MonoBehaviour
     [SerializeField] GameObject clue5Canva;
     [SerializeField] GameObject clue6Canva;
     [SerializeField] GameObject clue0Canva;
+    [SerializeField] GameObject clue7Canva;
+    [SerializeField] GameObject clue8Canva;
 
     //Booleanos
     private bool clue0Pressed = false;
@@ -21,6 +23,8 @@ public class CluesController : MonoBehaviour
     private bool clue4Pressed = false;
     private bool clue5Pressed = false;
     private bool clue6Pressed = false;
+    private bool clue7Pressed = false;
+    private bool clue8Pressed = false;
 
     [SerializeField] private GameObject player;
 
@@ -43,6 +47,10 @@ public class CluesController : MonoBehaviour
     //Final
     [SerializeField] GameObject clue6;
 
+    [SerializeField] GameObject clue7;
+
+    [SerializeField] GameObject clue8;
+
    
 
     void Start()
@@ -58,6 +66,8 @@ public class CluesController : MonoBehaviour
         clue4Pressed = PlayerPrefs.GetInt("Clue4Pressed", 0) == 1;
         clue5Pressed = PlayerPrefs.GetInt("Clue5Pressed", 0) == 1;
         clue6Pressed = PlayerPrefs.GetInt("Clue6Pressed", 0) == 1;
+        clue7Pressed = PlayerPrefs.GetInt("Clue7Pressed", 0) == 1;
+        clue8Pressed = PlayerPrefs.GetInt("Clue8Pressed", 0) == 1;
 
         if (clue0Pressed)
         {
@@ -92,6 +102,16 @@ public class CluesController : MonoBehaviour
         if (clue6Pressed)
         {
             clue6.SetActive(false); 
+        }
+
+        if (clue7Pressed)
+        {
+            clue7.SetActive(false); 
+        }
+
+        if (clue8Pressed)
+        {
+            clue8.SetActive(false); 
         }
     }
 
@@ -130,6 +150,12 @@ public class CluesController : MonoBehaviour
                 case "Clue#6":
                     Clue6();
                     break;
+                case "Clue#7":
+                    Clue7();
+                    break;
+                case "Clue#8":
+                    Clue8();
+                    break;
             }
         }
     }
@@ -142,7 +168,7 @@ public class CluesController : MonoBehaviour
 
         clue0.SetActive(false);
 
-        Destroy(clue0Canva, 7f);
+        Destroy(clue0Canva, 12f);
     }
 
     void Clue1()
@@ -156,7 +182,7 @@ public class CluesController : MonoBehaviour
 
         PlayerPrefs.Save();
 
-        Destroy(clue1Canva, 7f);
+        Destroy(clue1Canva, 12f);
 
     }
 
@@ -171,7 +197,7 @@ public class CluesController : MonoBehaviour
 
         PlayerPrefs.Save();
 
-        Destroy(clue2Canva, 7f);
+        Destroy(clue2Canva, 12f);
         
         if(clue1 != null){
             Destroy(clue1);
@@ -190,7 +216,7 @@ public class CluesController : MonoBehaviour
 
         PlayerPrefs.Save();
 
-        Destroy(clue3Canva, 7f);
+        Destroy(clue3Canva, 12f);
     }
     
     void Clue4()
@@ -204,7 +230,7 @@ public class CluesController : MonoBehaviour
 
         PlayerPrefs.Save();
 
-        Destroy(clue4Canva, 7f);
+        Destroy(clue4Canva, 12f);
     }
 
     void Clue5()
@@ -218,7 +244,7 @@ public class CluesController : MonoBehaviour
 
         PlayerPrefs.Save();
 
-        Destroy(clue5Canva, 7f);
+        Destroy(clue5Canva, 12f);
     }
 
     void Clue6()
@@ -232,7 +258,35 @@ public class CluesController : MonoBehaviour
 
         PlayerPrefs.Save();
 
-        Destroy(clue6Canva, 7f);
+        Destroy(clue6Canva, 12f);
+    }
+
+    void Clue7()
+    {
+        clue7Pressed = true;
+        PlayerPrefs.SetInt("Clue7Pressed", clue7Pressed ? 1 : 0);
+
+        clue7Canva.SetActive(true);
+
+        clue7.SetActive(false);
+
+        PlayerPrefs.Save();
+
+        Destroy(clue7Canva, 12f);
+    }
+
+    void Clue8()
+    {
+        clue8Pressed = true;
+        PlayerPrefs.SetInt("Clue8Pressed", clue8Pressed ? 1 : 0);
+
+        clue8Canva.SetActive(true);
+
+        clue8.SetActive(false);
+
+        PlayerPrefs.Save();
+
+        Destroy(clue8Canva, 12f);
     }
    
 }

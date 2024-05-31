@@ -47,6 +47,11 @@ public class CheckpointsController : MonoBehaviour
 
     void Awake()
     {
+        
+    }
+    void Start()
+    {
+        //Verificar guardados
         if (PlayerPrefs.HasKey("PlayerPosX"))
         {
             float x = PlayerPrefs.GetFloat("PlayerPosX");
@@ -54,11 +59,6 @@ public class CheckpointsController : MonoBehaviour
             float z = PlayerPrefs.GetFloat("PlayerPosZ");
             player.transform.position = new Vector3(x, y, z);
         }
-    }
-    void Start()
-    {
-        //Verificar guardados
-        
 
         if(PlayerPrefs.HasKey("LucesActive"))
         {

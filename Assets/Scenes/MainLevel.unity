@@ -2549,7 +2549,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.975927
+      value: -9.825928
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2557,7 +2557,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -17.119003
+      value: -17.749008
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
       propertyPath: m_LocalRotation.w
@@ -10117,7 +10117,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 19.214073
+      value: 19.664072
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
       propertyPath: m_LocalPosition.y
@@ -10125,7 +10125,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 10.880997
+      value: 11.431
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
       propertyPath: m_LocalRotation.w
@@ -13693,6 +13693,101 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 351088998}
   m_SourcePrefab: {fileID: 100100000, guid: c3c5723b95e2cb048b79fe74fbe087ea, type: 3}
+--- !u!1001 &445224762
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1342078616}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -23.670973
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5699339
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.2368546
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: -0.31811675
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.3181167
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.6315076
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.6315075
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -42.092
+      objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5b992e859174fde458154d3b3494ba64, type: 2}
+    - target: {fileID: 919132149155446097, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
+      propertyPath: m_Name
+      value: EntradaValla
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 445224765}
+  m_SourcePrefab: {fileID: 100100000, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
+--- !u!4 &445224763 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
+  m_PrefabInstance: {fileID: 445224762}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &445224764 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
+  m_PrefabInstance: {fileID: 445224762}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &445224765
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 445224764}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 9.16614, y: 0.113431156, z: 3.4495373}
+  m_Center: {x: 0.16245224, y: 0.00011635812, z: -0.17288901}
 --- !u!1 &445701338 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c3c5723b95e2cb048b79fe74fbe087ea, type: 3}
@@ -14366,6 +14461,8 @@ MonoBehaviour:
   clue5Canva: {fileID: 1507782581}
   clue6Canva: {fileID: 937892044}
   clue0Canva: {fileID: 1336998479}
+  clue7Canva: {fileID: 1587337197}
+  clue8Canva: {fileID: 1470579933}
   player: {fileID: 2079050025}
   clue0: {fileID: 2039922023}
   clue1: {fileID: 1107755383}
@@ -14374,6 +14471,8 @@ MonoBehaviour:
   clue4: {fileID: 473744651}
   clue5: {fileID: 1473379404}
   clue6: {fileID: 1715163936}
+  clue7: {fileID: 967863745}
+  clue8: {fileID: 895325270}
 --- !u!65 &473744654
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -20329,6 +20428,8 @@ MonoBehaviour:
   clue5Canva: {fileID: 1507782581}
   clue6Canva: {fileID: 937892044}
   clue0Canva: {fileID: 1336998479}
+  clue7Canva: {fileID: 1587337197}
+  clue8Canva: {fileID: 1470579933}
   player: {fileID: 2079050025}
   clue0: {fileID: 2039922023}
   clue1: {fileID: 1107755383}
@@ -20337,6 +20438,8 @@ MonoBehaviour:
   clue4: {fileID: 473744651}
   clue5: {fileID: 1473379404}
   clue6: {fileID: 1715163936}
+  clue7: {fileID: 967863745}
+  clue8: {fileID: 895325270}
 --- !u!65 &652510296
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22092,7 +22195,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.343374
+      value: -17.093374
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
       propertyPath: m_LocalPosition.y
@@ -22100,7 +22203,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -22.802559
+      value: -23.352562
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
       propertyPath: m_LocalRotation.w
@@ -26689,6 +26792,91 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1351475953}
   m_LocalEulerAnglesHint: {x: 0, y: -39.91, z: 0}
+--- !u!1 &895325270
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 895325271}
+  - component: {fileID: 895325273}
+  - component: {fileID: 895325272}
+  m_Layer: 0
+  m_Name: Clue#8
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &895325271
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895325270}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0.48381707, z: 0, w: 0.8751692}
+  m_LocalPosition: {x: -84.89, y: -4.65, z: 62.83}
+  m_LocalScale: {x: 0.36790863, y: 1.189551, z: 3.0770402}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1480257319}
+  m_LocalEulerAnglesHint: {x: 0, y: 57.87, z: 0}
+--- !u!114 &895325272
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895325270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c3ab50f40f0a084da4378d0dd95d134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clue1Canva: {fileID: 1104472418}
+  clue2Canva: {fileID: 394331475}
+  clue3Canva: {fileID: 1759937172}
+  clue4Canva: {fileID: 816291141}
+  clue5Canva: {fileID: 1507782581}
+  clue6Canva: {fileID: 937892044}
+  clue0Canva: {fileID: 1336998479}
+  clue7Canva: {fileID: 1587337197}
+  clue8Canva: {fileID: 1470579933}
+  player: {fileID: 2079050025}
+  clue0: {fileID: 2039922023}
+  clue1: {fileID: 1107755383}
+  clue2: {fileID: 652510293}
+  clue3: {fileID: 2036632464}
+  clue4: {fileID: 473744651}
+  clue5: {fileID: 1473379404}
+  clue6: {fileID: 1715163936}
+  clue7: {fileID: 967863745}
+  clue8: {fileID: 895325270}
+--- !u!65 &895325273
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 895325270}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 23.980621, y: 4.3563914, z: 0.9999998}
+  m_Center: {x: 4.117558, y: 1.4281961, z: 0.000000045233186}
 --- !u!1 &895346300 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c3c5723b95e2cb048b79fe74fbe087ea, type: 3}
@@ -29573,6 +29761,91 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.25208098, y: 0.28268063, z: 4.1783123}
   m_Center: {x: -0.003277472, y: -0.0040749507, z: 0.96454597}
+--- !u!1 &967863745
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 967863748}
+  - component: {fileID: 967863747}
+  - component: {fileID: 967863746}
+  m_Layer: 0
+  m_Name: Clue#7
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &967863746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967863745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6c3ab50f40f0a084da4378d0dd95d134, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clue1Canva: {fileID: 1104472418}
+  clue2Canva: {fileID: 394331475}
+  clue3Canva: {fileID: 1759937172}
+  clue4Canva: {fileID: 816291141}
+  clue5Canva: {fileID: 1507782581}
+  clue6Canva: {fileID: 937892044}
+  clue0Canva: {fileID: 1336998479}
+  clue7Canva: {fileID: 1587337197}
+  clue8Canva: {fileID: 1470579933}
+  player: {fileID: 2079050025}
+  clue0: {fileID: 2039922023}
+  clue1: {fileID: 1107755383}
+  clue2: {fileID: 652510293}
+  clue3: {fileID: 2036632464}
+  clue4: {fileID: 473744651}
+  clue5: {fileID: 1473379404}
+  clue6: {fileID: 1715163936}
+  clue7: {fileID: 967863745}
+  clue8: {fileID: 895325270}
+--- !u!65 &967863747
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967863745}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 23.980621, y: 4.3563914, z: 0.9999998}
+  m_Center: {x: 4.117558, y: 1.4281961, z: 0.000000045233186}
+--- !u!4 &967863748
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967863745}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.1755608, z: -0, w: 0.98446864}
+  m_LocalPosition: {x: -27.91, y: -4.65, z: 120.15}
+  m_LocalScale: {x: 0.36790863, y: 1.189551, z: 3.0770402}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1480257319}
+  m_LocalEulerAnglesHint: {x: 0, y: 20.223, z: 0}
 --- !u!1 &968090317 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c3c5723b95e2cb048b79fe74fbe087ea, type: 3}
@@ -34622,6 +34895,8 @@ MonoBehaviour:
   clue5Canva: {fileID: 1507782581}
   clue6Canva: {fileID: 937892044}
   clue0Canva: {fileID: 1336998479}
+  clue7Canva: {fileID: 1587337197}
+  clue8Canva: {fileID: 1470579933}
   player: {fileID: 2079050025}
   clue0: {fileID: 2039922023}
   clue1: {fileID: 1107755383}
@@ -34630,6 +34905,8 @@ MonoBehaviour:
   clue4: {fileID: 473744651}
   clue5: {fileID: 1473379404}
   clue6: {fileID: 1715163936}
+  clue7: {fileID: 967863745}
+  clue8: {fileID: 895325270}
 --- !u!65 &1107755386
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -42328,6 +42605,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 197665563}
+  - {fileID: 445224763}
   m_Father: {fileID: 885149615}
   m_LocalEulerAnglesHint: {x: 0, y: 191.38, z: 0}
 --- !u!65 &1342078617
@@ -46169,6 +46447,85 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8881220534181038848, guid: 877745d48de21ba4fbbaa9b43e0620f2, type: 3}
   m_PrefabInstance: {fileID: 1469664477}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1470579933
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1470579934}
+  - component: {fileID: 1470579936}
+  - component: {fileID: 1470579935}
+  m_Layer: 5
+  m_Name: Clue8Canva
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1470579934
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470579933}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1628599683}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1.1375, y: -448.91}
+  m_SizeDelta: {x: 1822.8987, y: 182.18}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1470579935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470579933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 70
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 6
+    m_MaxSize: 70
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: No. No puedo irme de aqui sin mi hijo.
+--- !u!222 &1470579936
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470579933}
+  m_CullTransparentMesh: 1
 --- !u!1 &1473379404
 GameObject:
   m_ObjectHideFlags: 0
@@ -46221,6 +46578,8 @@ MonoBehaviour:
   clue5Canva: {fileID: 1507782581}
   clue6Canva: {fileID: 937892044}
   clue0Canva: {fileID: 1336998479}
+  clue7Canva: {fileID: 1587337197}
+  clue8Canva: {fileID: 1470579933}
   player: {fileID: 2079050025}
   clue0: {fileID: 2039922023}
   clue1: {fileID: 1107755383}
@@ -46229,6 +46588,8 @@ MonoBehaviour:
   clue4: {fileID: 473744651}
   clue5: {fileID: 1473379404}
   clue6: {fileID: 1715163936}
+  clue7: {fileID: 967863745}
+  clue8: {fileID: 895325270}
 --- !u!65 &1473379407
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -46286,6 +46647,8 @@ Transform:
   - {fileID: 473744652}
   - {fileID: 1473379405}
   - {fileID: 1715163937}
+  - {fileID: 967863748}
+  - {fileID: 895325271}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1481136268 stripped
@@ -50163,6 +50526,85 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.25208098, y: 0.28268063, z: 4.1783123}
   m_Center: {x: -0.003277472, y: -0.0040749507, z: 0.96454597}
+--- !u!1 &1587337197
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1587337198}
+  - component: {fileID: 1587337200}
+  - component: {fileID: 1587337199}
+  m_Layer: 5
+  m_Name: Clue7Canva
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1587337198
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587337197}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1628599683}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1.1375, y: -448.91}
+  m_SizeDelta: {x: 1822.8987, y: 182.18}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1587337199
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587337197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.9150943, g: 0.9150943, b: 0.9150943, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 70
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 6
+    m_MaxSize: 70
+    m_Alignment: 1
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: No. No puedo irme de aqui sin mi hijo.
+--- !u!222 &1587337200
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1587337197}
+  m_CullTransparentMesh: 1
 --- !u!1 &1588756935 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c3c5723b95e2cb048b79fe74fbe087ea, type: 3}
@@ -51658,6 +52100,8 @@ RectTransform:
   - {fileID: 1759937173}
   - {fileID: 816291142}
   - {fileID: 1507782582}
+  - {fileID: 1587337198}
+  - {fileID: 1470579934}
   - {fileID: 937892045}
   - {fileID: 181989192}
   - {fileID: 1533673018}
@@ -53340,7 +53784,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -23.905928
+      value: -24.275928
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
       propertyPath: m_LocalPosition.y
@@ -53348,7 +53792,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -28.409004
+      value: -28.679008
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
       propertyPath: m_LocalRotation.w
@@ -54698,6 +55142,8 @@ MonoBehaviour:
   clue5Canva: {fileID: 1507782581}
   clue6Canva: {fileID: 937892044}
   clue0Canva: {fileID: 1336998479}
+  clue7Canva: {fileID: 1587337197}
+  clue8Canva: {fileID: 1470579933}
   player: {fileID: 2079050025}
   clue0: {fileID: 2039922023}
   clue1: {fileID: 1107755383}
@@ -54706,6 +55152,8 @@ MonoBehaviour:
   clue4: {fileID: 473744651}
   clue5: {fileID: 1473379404}
   clue6: {fileID: 1715163936}
+  clue7: {fileID: 967863745}
+  clue8: {fileID: 895325270}
 --- !u!65 &1715163939
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -55175,15 +55623,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 7.0442333
+      value: 7.82
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.62993765
+      value: -0.63
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -2.9243355
+      value: -2.04
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
       propertyPath: m_LocalRotation.w
@@ -58491,7 +58939,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.8669281
+      value: -2.93
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
       propertyPath: m_LocalPosition.y
@@ -58499,7 +58947,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -11.392006
+      value: -12.21
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
       propertyPath: m_LocalRotation.w
@@ -61230,7 +61678,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.284072
+      value: 13.764071
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
       propertyPath: m_LocalPosition.y
@@ -61238,7 +61686,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3.9709969
+      value: 4.5610085
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
       propertyPath: m_LocalRotation.w
@@ -64050,6 +64498,8 @@ MonoBehaviour:
   clue5Canva: {fileID: 1507782581}
   clue6Canva: {fileID: 937892044}
   clue0Canva: {fileID: 1336998479}
+  clue7Canva: {fileID: 1587337197}
+  clue8Canva: {fileID: 1470579933}
   player: {fileID: 2079050025}
   clue0: {fileID: 2039922023}
   clue1: {fileID: 1107755383}
@@ -64058,6 +64508,8 @@ MonoBehaviour:
   clue4: {fileID: 473744651}
   clue5: {fileID: 1473379404}
   clue6: {fileID: 1715163936}
+  clue7: {fileID: 967863745}
+  clue8: {fileID: 895325270}
 --- !u!65 &2036632467
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -64300,6 +64752,8 @@ MonoBehaviour:
   clue5Canva: {fileID: 1507782581}
   clue6Canva: {fileID: 937892044}
   clue0Canva: {fileID: 1336998479}
+  clue7Canva: {fileID: 1587337197}
+  clue8Canva: {fileID: 1470579933}
   player: {fileID: 2079050025}
   clue0: {fileID: 2039922023}
   clue1: {fileID: 1107755383}
@@ -64308,6 +64762,8 @@ MonoBehaviour:
   clue4: {fileID: 473744651}
   clue5: {fileID: 1473379404}
   clue6: {fileID: 1715163936}
+  clue7: {fileID: 967863745}
+  clue8: {fileID: 895325270}
 --- !u!65 &2039922026
 BoxCollider:
   m_ObjectHideFlags: 0
