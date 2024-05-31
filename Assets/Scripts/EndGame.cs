@@ -18,7 +18,7 @@ public class EndGame : MonoBehaviour
         {
             //SceneManager.LoadScene(currentScene + 1);
             PlayerPrefs.DeleteAll();
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(3);
         }
     }
 }

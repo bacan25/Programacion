@@ -64,7 +64,6 @@ public class VideoFinal : MonoBehaviour
         videoCanvas.SetActive(false);
         videoPlayer.Stop();
 
-        // Pasar a la siguiente escena
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(0);
     }
 }

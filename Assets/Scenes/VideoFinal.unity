@@ -477,9 +477,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07e1e209e4df8a34fa898cc8691c684b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  videoPlayer: {fileID: 0}
-  rawImage: {fileID: 0}
-  videoCanvas: {fileID: 0}
+  videoPlayer: {fileID: 1433177807}
+  rawImage: {fileID: 1748994343}
+  videoCanvas: {fileID: 2031006147}
 --- !u!1 &2065168759
 GameObject:
   m_ObjectHideFlags: 0
