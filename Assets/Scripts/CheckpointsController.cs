@@ -23,11 +23,8 @@ public class CheckpointsController : MonoBehaviour
     public GameObject clue3;
     public GameObject clue4;
 
-    //Booooleanos
-    private bool checkpoint1Pressed = false;
-    public bool checkpoint2Pressed = false;
-    private bool checkpoint3Pressed = false;
-    private bool checkpoint4Pressed = false;
+    //Level manager
+    private LevelManager levelM;
 
     [SerializeField] private GameObject player;
 
@@ -47,28 +44,28 @@ public class CheckpointsController : MonoBehaviour
 
     void Awake()
     {
-        
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
+
+    void OnDestroy()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+    
     void Start()
     {
-        //Verificar guardados
-        if (PlayerPrefs.HasKey("PlayerPosX"))
-        {
-            float x = PlayerPrefs.GetFloat("PlayerPosX");
-            float y = PlayerPrefs.GetFloat("PlayerPosY");
-            float z = PlayerPrefs.GetFloat("PlayerPosZ");
-            player.transform.position = new Vector3(x, y, z);
-        }
+        //Acceso Singleton
+        levelM = LevelManager.Instance;
 
         if(PlayerPrefs.HasKey("LucesActive"))
         {
             lucesCoche.SetActive(PlayerPrefs.GetInt("LucesActive", 0) == 1);
         }
 
-        checkpoint1Pressed = PlayerPrefs.GetInt("Checkpoint1Pressed", 0) == 1;
-        checkpoint2Pressed = PlayerPrefs.GetInt("Checkpoint2Pressed", 0) == 1;
-        checkpoint3Pressed = PlayerPrefs.GetInt("Checkpoint3Pressed", 0) == 1;
-        checkpoint4Pressed = PlayerPrefs.GetInt("Checkpoint4Pressed", 0) == 1;
+        levelM.checkpoint1Pressed = PlayerPrefs.GetInt("Checkpoint1Pressed", 0) == 1;
+        levelM.checkpoint2Pressed = PlayerPrefs.GetInt("Checkpoint2Pressed", 0) == 1;
+        levelM.checkpoint3Pressed = PlayerPrefs.GetInt("Checkpoint3Pressed", 0) == 1;
+        levelM.checkpoint4Pressed = PlayerPrefs.GetInt("Checkpoint4Pressed", 0) == 1;
 
         linterna.SetActive(PlayerPrefs.GetInt("LinternaActive", 0) == 1);
         canvaLinterna.SetActive(PlayerPrefs.GetInt("CanvaLinternaActive", 0) == 1);
@@ -77,19 +74,19 @@ public class CheckpointsController : MonoBehaviour
         enemyInt.SetActive(PlayerPrefs.GetInt("EnemyIntActive", 0) == 1);
         enemyExt.SetActive(PlayerPrefs.GetInt("EnemyExtActive", 0) == 1);
 
-        if (checkpoint1Pressed)
+        if (levelM.checkpoint1Pressed)
         {
             check1.SetActive(false);
         }
-        if (checkpoint2Pressed)
+        if (levelM.checkpoint2Pressed)
         {
             check2.SetActive(false);
         }
-        if (checkpoint3Pressed)
+        if (levelM.checkpoint3Pressed)
         {
             check3.SetActive(false);
         }
-        if (checkpoint4Pressed)
+        if (levelM.checkpoint4Pressed)
         {
             check4.SetActive(false);
         }
@@ -111,7 +108,7 @@ public class CheckpointsController : MonoBehaviour
                     Checkpoint1();
                     break;
                 case "Checkpoint#2":
-                    if (key._hasFlash)
+                    if (levelM._hasFlash)
                     {
                         Checkpoint2();
                     }
@@ -131,11 +128,11 @@ public class CheckpointsController : MonoBehaviour
 
     void Checkpoint1()
     {
-        checkpoint1Pressed = true;
+        levelM.checkpoint1Pressed = true;
         clue3.SetActive(true);
         key.PickFlash();
 
-        PlayerPrefs.SetInt("Checkpoint1Pressed", checkpoint1Pressed ? 1 : 0);
+        PlayerPrefs.SetInt("Checkpoint1Pressed", levelM.checkpoint1Pressed ? 1 : 0);
 
         PlayerPrefs.SetFloat("PlayerPosX", player.transform.position.x);
         PlayerPrefs.SetFloat("PlayerPosY", player.transform.position.y);
@@ -163,11 +160,11 @@ public class CheckpointsController : MonoBehaviour
     
     void Checkpoint2()
     {
-        checkpoint2Pressed = true;
+        levelM.checkpoint2Pressed = true;
         clue4.SetActive(true);
         PlayerPrefs.SetInt("Clue4", 1);
 
-        PlayerPrefs.SetInt("Checkpoint2Pressed", checkpoint2Pressed ? 1 : 0);
+        PlayerPrefs.SetInt("Checkpoint2Pressed", levelM.checkpoint2Pressed ? 1 : 0);
 
         PlayerPrefs.SetFloat("PlayerPosX", player.transform.position.x);
         PlayerPrefs.SetFloat("PlayerPosY", player.transform.position.y + 5);
@@ -187,8 +184,8 @@ public class CheckpointsController : MonoBehaviour
     
     void Checkpoint3()
     {
-        checkpoint3Pressed = true;
-        PlayerPrefs.SetInt("Checkpoint3Pressed", checkpoint3Pressed ? 1 : 0);
+        levelM.checkpoint3Pressed = true;
+        PlayerPrefs.SetInt("Checkpoint3Pressed", levelM.checkpoint3Pressed ? 1 : 0);
 
         PlayerPrefs.SetFloat("PlayerPosX", player.transform.position.x);
         PlayerPrefs.SetFloat("PlayerPosY", player.transform.position.y);
@@ -208,8 +205,8 @@ public class CheckpointsController : MonoBehaviour
     
     void Checkpoint4()
     {
-        checkpoint4Pressed = true;
-        PlayerPrefs.SetInt("Checkpoint4Pressed", checkpoint4Pressed ? 1 : 0);
+        levelM.checkpoint4Pressed = true;
+        PlayerPrefs.SetInt("Checkpoint4Pressed", levelM.checkpoint4Pressed ? 1 : 0);
 
         PlayerPrefs.SetFloat("PlayerPosX", player.transform.position.x);
         PlayerPrefs.SetFloat("PlayerPosY", player.transform.position.y);
@@ -233,4 +230,15 @@ public class CheckpointsController : MonoBehaviour
         print("Final activado");
         triggerFinal.SetActive(false);
     }
+
+    void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        if (PlayerPrefs.HasKey("PlayerPosX"))
+        {
+            float x = PlayerPrefs.GetFloat("PlayerPosX");
+            float y = PlayerPrefs.GetFloat("PlayerPosY");
+            float z = PlayerPrefs.GetFloat("PlayerPosZ");
+            player.transform.position = new Vector3(x, y, z);
+        }
+    }    
 }

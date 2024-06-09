@@ -15,16 +15,8 @@ public class CluesController : MonoBehaviour
     [SerializeField] GameObject clue7Canva;
     [SerializeField] GameObject clue8Canva;
 
-    //Booleanos
-    private bool clue0Pressed = false;
-    private bool clue1Pressed = false;
-    private bool clue2Pressed = false;
-    private bool clue3Pressed = false;
-    private bool clue4Pressed = false;
-    private bool clue5Pressed = false;
-    private bool clue6Pressed = false;
-    private bool clue7Pressed = false;
-    private bool clue8Pressed = false;
+    //Level manager
+    private LevelManager levelM;
 
     [SerializeField] private GameObject player;
 
@@ -55,61 +47,64 @@ public class CluesController : MonoBehaviour
 
     void Start()
     {
+        //Acceso Singleton
+        levelM = LevelManager.Instance;
+        
         //Borra Playerprefs
         //PlayerPrefs.DeleteAll();
 
         //Verifica los guardados
-        clue0Pressed = PlayerPrefs.GetInt("Clue0Pressed", 0) == 1;
-        clue1Pressed = PlayerPrefs.GetInt("Clue1Pressed", 0) == 1;
-        clue2Pressed = PlayerPrefs.GetInt("Clue2Pressed", 0) == 1;
-        clue3Pressed = PlayerPrefs.GetInt("Clue3Pressed", 0) == 1;
-        clue4Pressed = PlayerPrefs.GetInt("Clue4Pressed", 0) == 1;
-        clue5Pressed = PlayerPrefs.GetInt("Clue5Pressed", 0) == 1;
-        clue6Pressed = PlayerPrefs.GetInt("Clue6Pressed", 0) == 1;
-        clue7Pressed = PlayerPrefs.GetInt("Clue7Pressed", 0) == 1;
-        clue8Pressed = PlayerPrefs.GetInt("Clue8Pressed", 0) == 1;
+        levelM.clue0Pressed = PlayerPrefs.GetInt("Clue0Pressed", 0) == 1;
+        levelM.clue1Pressed = PlayerPrefs.GetInt("Clue1Pressed", 0) == 1;
+        levelM.clue2Pressed = PlayerPrefs.GetInt("Clue2Pressed", 0) == 1;
+        levelM.clue3Pressed = PlayerPrefs.GetInt("Clue3Pressed", 0) == 1;
+        levelM.clue4Pressed = PlayerPrefs.GetInt("Clue4Pressed", 0) == 1;
+        levelM.clue5Pressed = PlayerPrefs.GetInt("Clue5Pressed", 0) == 1;
+        levelM.clue6Pressed = PlayerPrefs.GetInt("Clue6Pressed", 0) == 1;
+        levelM.clue7Pressed = PlayerPrefs.GetInt("Clue7Pressed", 0) == 1;
+        levelM.clue8Pressed = PlayerPrefs.GetInt("Clue8Pressed", 0) == 1;
 
-        if (clue0Pressed)
+        if (levelM.clue0Pressed)
         {
             clue0.SetActive(false); 
         }
 
-        if (clue1Pressed)
+        if (levelM.clue1Pressed)
         {
             clue1.SetActive(false); 
         }
 
-        if (clue2Pressed)
+        if (levelM.clue2Pressed)
         {
             clue2.SetActive(false); 
         }
 
-        if (clue3Pressed)
+        if (levelM.clue3Pressed)
         {
             clue3.SetActive(false); 
         }
 
-        if (clue4Pressed)
+        if (levelM.clue4Pressed)
         {
             clue4.SetActive(false); 
         }
 
-        if (clue5Pressed)
+        if (levelM.clue5Pressed)
         {
             clue5.SetActive(false); 
         }
 
-        if (clue6Pressed)
+        if (levelM.clue6Pressed)
         {
             clue6.SetActive(false); 
         }
 
-        if (clue7Pressed)
+        if (levelM.clue7Pressed)
         {
             clue7.SetActive(false); 
         }
 
-        if (clue8Pressed)
+        if (levelM.clue8Pressed)
         {
             clue8.SetActive(false); 
         }
@@ -162,8 +157,8 @@ public class CluesController : MonoBehaviour
 
     void Clue0()
     {
-        clue0Pressed = true;
-        PlayerPrefs.SetInt("Clue0Pressed", clue0Pressed ? 1 : 0);
+        levelM.clue0Pressed = true;
+        PlayerPrefs.SetInt("Clue0Pressed", levelM.clue0Pressed ? 1 : 0);
         clue0Canva.SetActive(true);
 
         clue0.SetActive(false);
@@ -173,8 +168,8 @@ public class CluesController : MonoBehaviour
 
     void Clue1()
     {
-        clue1Pressed = true;
-        PlayerPrefs.SetInt("Clue1Pressed", clue1Pressed ? 1 : 0);
+        levelM.clue1Pressed = true;
+        PlayerPrefs.SetInt("Clue1Pressed", levelM.clue1Pressed ? 1 : 0);
 
         clue1Canva.SetActive(true);
 
@@ -188,8 +183,8 @@ public class CluesController : MonoBehaviour
 
     void Clue2()
     {
-        clue2Pressed = true;
-        PlayerPrefs.SetInt("Clue2Pressed", clue2Pressed ? 1 : 0);
+        levelM.clue2Pressed = true;
+        PlayerPrefs.SetInt("Clue2Pressed", levelM.clue2Pressed ? 1 : 0);
 
         clue2Canva.SetActive(true);
 
@@ -207,8 +202,8 @@ public class CluesController : MonoBehaviour
     
     void Clue3()
     {
-        clue3Pressed = true;
-        PlayerPrefs.SetInt("Clue3Pressed", clue3Pressed ? 1 : 0);
+        levelM.clue3Pressed = true;
+        PlayerPrefs.SetInt("Clue3Pressed", levelM.clue3Pressed ? 1 : 0);
 
         clue3Canva.SetActive(true);
 
@@ -221,8 +216,8 @@ public class CluesController : MonoBehaviour
     
     void Clue4()
     {
-        clue4Pressed = true;
-        PlayerPrefs.SetInt("Clue4Pressed", clue4Pressed ? 1 : 0);
+        levelM.clue4Pressed = true;
+        PlayerPrefs.SetInt("Clue4Pressed", levelM.clue4Pressed ? 1 : 0);
 
         clue4Canva.SetActive(true);
 
@@ -235,8 +230,8 @@ public class CluesController : MonoBehaviour
 
     void Clue5()
     {
-        clue5Pressed = true;
-        PlayerPrefs.SetInt("Clue5Pressed", clue5Pressed ? 1 : 0);
+        levelM.clue5Pressed = true;
+        PlayerPrefs.SetInt("Clue5Pressed", levelM.clue5Pressed ? 1 : 0);
 
         clue5Canva.SetActive(true);
 
@@ -249,8 +244,8 @@ public class CluesController : MonoBehaviour
 
     void Clue6()
     {
-        clue6Pressed = true;
-        PlayerPrefs.SetInt("Clue6Pressed", clue6Pressed ? 1 : 0);
+        levelM.clue6Pressed = true;
+        PlayerPrefs.SetInt("Clue6Pressed", levelM.clue6Pressed ? 1 : 0);
 
         clue6Canva.SetActive(true);
 
@@ -263,8 +258,8 @@ public class CluesController : MonoBehaviour
 
     void Clue7()
     {
-        clue7Pressed = true;
-        PlayerPrefs.SetInt("Clue7Pressed", clue7Pressed ? 1 : 0);
+        levelM.clue7Pressed = true;
+        PlayerPrefs.SetInt("Clue7Pressed", levelM.clue7Pressed ? 1 : 0);
 
         clue7Canva.SetActive(true);
 
@@ -277,8 +272,8 @@ public class CluesController : MonoBehaviour
 
     void Clue8()
     {
-        clue8Pressed = true;
-        PlayerPrefs.SetInt("Clue8Pressed", clue8Pressed ? 1 : 0);
+        levelM.clue8Pressed = true;
+        PlayerPrefs.SetInt("Clue8Pressed", levelM.clue8Pressed ? 1 : 0);
 
         clue8Canva.SetActive(true);
 
