@@ -14,6 +14,7 @@ public class VideoController : MonoBehaviour
 
     void Start()
     {
+
         videoCanvas.SetActive(false);
         videoPlayer.loopPointReached += OnVideoEnd;
         videoPlayer.errorReceived += OnVideoError;
@@ -62,14 +63,6 @@ public class VideoController : MonoBehaviour
         videoCanvas.SetActive(false);
         videoPlayer.Stop();
 
-        if (PlayerPrefs.HasKey(lastCheckpointKey))
-        {
-            string checkpointScene = PlayerPrefs.GetString(lastCheckpointKey);
-            SceneManager.LoadScene(checkpointScene);
-        }
-        else
-        {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        }
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }

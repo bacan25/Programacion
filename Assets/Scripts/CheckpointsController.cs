@@ -44,6 +44,7 @@ public class CheckpointsController : MonoBehaviour
 
     void Awake()
     {
+        //PlayerPrefs.DeleteAll();
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -97,36 +98,8 @@ public class CheckpointsController : MonoBehaviour
         // Aquí podrías agregar lógica si es necesario
     }
 
-    private void OnTriggerEnter(Collider col)
-    {
-        //Comprueba que Trigger toco el pana
-        if (col.CompareTag("Player"))
-        {
-            switch (gameObject.name)
-            {
-                case "Checkpoint#1":
-                    Checkpoint1();
-                    break;
-                case "Checkpoint#2":
-                    if (levelM._hasFlash)
-                    {
-                        Checkpoint2();
-                    }
-                    break;
-                case "Checkpoint#3":
-                    Checkpoint3();
-                    break;
-                case "Checkpoint#4":
-                    Checkpoint4();
-                    break;
-                case "InicioFinal":
-                    Final();
-                    break;
-            }
-        }
-    }
 
-    void Checkpoint1()
+    public void Checkpoint1()
     {
         levelM.checkpoint1Pressed = true;
         clue3.SetActive(true);
@@ -134,7 +107,7 @@ public class CheckpointsController : MonoBehaviour
 
         PlayerPrefs.SetInt("Checkpoint1Pressed", levelM.checkpoint1Pressed ? 1 : 0);
 
-        PlayerPrefs.SetFloat("PlayerPosX", player.transform.position.x);
+        PlayerPrefs.SetFloat("PlayerPosX", player.transform.position.x + 1);
         PlayerPrefs.SetFloat("PlayerPosY", player.transform.position.y);
         PlayerPrefs.SetFloat("PlayerPosZ", player.transform.position.z);
         PlayerPrefs.SetString("LastCheckpoint", SceneManager.GetActiveScene().name);
@@ -158,7 +131,7 @@ public class CheckpointsController : MonoBehaviour
         PlayerPrefs.Save();
     }
     
-    void Checkpoint2()
+    public void Checkpoint2()
     {
         levelM.checkpoint2Pressed = true;
         clue4.SetActive(true);
@@ -182,13 +155,13 @@ public class CheckpointsController : MonoBehaviour
         PlayerPrefs.Save();
     }
     
-    void Checkpoint3()
+    public void Checkpoint3()
     {
         levelM.checkpoint3Pressed = true;
         PlayerPrefs.SetInt("Checkpoint3Pressed", levelM.checkpoint3Pressed ? 1 : 0);
 
         PlayerPrefs.SetFloat("PlayerPosX", player.transform.position.x);
-        PlayerPrefs.SetFloat("PlayerPosY", player.transform.position.y);
+        PlayerPrefs.SetFloat("PlayerPosY", player.transform.position.y + 1);
         PlayerPrefs.SetFloat("PlayerPosZ", player.transform.position.z);
         PlayerPrefs.SetString("LastCheckpoint", SceneManager.GetActiveScene().name);
 
@@ -203,13 +176,13 @@ public class CheckpointsController : MonoBehaviour
         PlayerPrefs.Save();
     }
     
-    void Checkpoint4()
+    public void Checkpoint4()
     {
         levelM.checkpoint4Pressed = true;
         PlayerPrefs.SetInt("Checkpoint4Pressed", levelM.checkpoint4Pressed ? 1 : 0);
 
         PlayerPrefs.SetFloat("PlayerPosX", player.transform.position.x);
-        PlayerPrefs.SetFloat("PlayerPosY", player.transform.position.y);
+        PlayerPrefs.SetFloat("PlayerPosY", player.transform.position.y + 2);
         PlayerPrefs.SetFloat("PlayerPosZ", player.transform.position.z);
         PlayerPrefs.SetString("LastCheckpoint", SceneManager.GetActiveScene().name);
 
@@ -218,7 +191,7 @@ public class CheckpointsController : MonoBehaviour
         PlayerPrefs.Save();
     }
 
-    void Final()
+    public void Final()
     {
         endGame.SetActive(true);
         linterna.SetActive(false);

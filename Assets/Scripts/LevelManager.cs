@@ -12,11 +12,11 @@ public class LevelManager : MonoBehaviour
     [HideInInspector] public bool checkpoint4Pressed = false;
 
     //Objetos recogidos
-    [HideInInspector] public bool _hasCrossbar;
+    public bool _hasCrossbar;
     [HideInInspector] public bool _extDoorOpened;
     [HideInInspector] public bool _intDoorOpened;
-    [HideInInspector] public bool _hasFlash;
-    [HideInInspector] public bool _hasKey;
+    public bool _hasFlash;
+    public bool _hasKey;
 
     //Pistas recogidas
     [HideInInspector] public bool clue0Pressed = false;
@@ -40,6 +40,14 @@ public class LevelManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
+
+    void Start()
+    {
+        Debug.Log(checkpoint1Pressed);
+        Debug.Log(checkpoint2Pressed);
+        Debug.Log(checkpoint3Pressed);
+        Debug.Log(checkpoint4Pressed);
     }
 
 }

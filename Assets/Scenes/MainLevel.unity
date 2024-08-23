@@ -5435,6 +5435,70 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.25208098, y: 0.28268063, z: 4.1783123}
   m_Center: {x: -0.003277472, y: -0.0040749507, z: 0.96454597}
+--- !u!1 &137024966
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 137024968}
+  - component: {fileID: 137024967}
+  m_Layer: 0
+  m_Name: CheckpointsController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &137024967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137024966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 052d94d9a2246584b8306bd2f04813ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  check1: {fileID: 1342078615}
+  check2: {fileID: 300889188}
+  check3: {fileID: 1380171304}
+  check4: {fileID: 274727290}
+  key: {fileID: 1575059311}
+  crossb: {fileID: 553810483}
+  linterna: {fileID: 319306827}
+  bateria: {fileID: 958724760}
+  mike: {fileID: 1775089124}
+  clue3: {fileID: 2036632464}
+  clue4: {fileID: 473744651}
+  player: {fileID: 2079050025}
+  canvaLinterna: {fileID: 1923938503}
+  enemyInt: {fileID: 1277271163}
+  lucesCoche: {fileID: 513530021}
+  campana: {fileID: 41159827}
+  enemyExt: {fileID: 1111172962}
+  finalEnemy: {fileID: 1277271164}
+  endGame: {fileID: 1328791480}
+  triggerFinal: {fileID: 1747658431}
+--- !u!4 &137024968
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 137024966}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -46.40093, y: 17.189209, z: 44.444744}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &138250087
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7278,8 +7342,8 @@ MonoBehaviour:
   keyScript: {fileID: 1575059311}
   doorScript: {fileID: 206635245}
   crossScript: {fileID: 553810483}
-  check3: {fileID: 1380171306}
-  check2: {fileID: 300889190}
+  check3: {fileID: 0}
+  check2: {fileID: 0}
   key: {fileID: 1575059310}
   crossbar: {fileID: 553810482}
   doorsExt: {fileID: 1943749191}
@@ -9205,7 +9269,7 @@ GameObject:
   m_Component:
   - component: {fileID: 274727291}
   - component: {fileID: 274727293}
-  - component: {fileID: 274727292}
+  - component: {fileID: 274727294}
   m_Layer: 0
   m_Name: Checkpoint#4
   m_TagString: Untagged
@@ -9222,44 +9286,12 @@ Transform:
   m_GameObject: {fileID: 274727290}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.9331572, z: -0, w: 0.35946858}
-  m_LocalPosition: {x: 27.86, y: 10.801, z: -37.38}
+  m_LocalPosition: {x: 27.58, y: 11.36, z: -37.284}
   m_LocalScale: {x: 0.50105345, y: 0.39810723, z: 1.9893987}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 885149615}
   m_LocalEulerAnglesHint: {x: 0, y: 137.865, z: 0}
---- !u!114 &274727292
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 274727290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 052d94d9a2246584b8306bd2f04813ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  check1: {fileID: 1342078615}
-  check2: {fileID: 300889188}
-  check3: {fileID: 1380171304}
-  check4: {fileID: 274727290}
-  key: {fileID: 1575059311}
-  crossb: {fileID: 553810483}
-  linterna: {fileID: 319306827}
-  bateria: {fileID: 958724760}
-  mike: {fileID: 1775089124}
-  clue3: {fileID: 2036632464}
-  clue4: {fileID: 473744651}
-  player: {fileID: 2079050025}
-  canvaLinterna: {fileID: 1923938503}
-  enemyInt: {fileID: 1277271163}
-  lucesCoche: {fileID: 513530021}
-  campana: {fileID: 41159827}
-  enemyExt: {fileID: 1111172962}
-  finalEnemy: {fileID: 1277271164}
-  endGame: {fileID: 1328791480}
-  triggerFinal: {fileID: 1747658431}
 --- !u!65 &274727293
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9281,6 +9313,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 6.2396765, y: 6.475755, z: 0.3665489}
   m_Center: {x: 0.56151605, y: 3.2577245, z: -0.6975563}
+--- !u!114 &274727294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 274727290}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc2349149472f6e4c95839aedb1d030a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 137024967}
 --- !u!1 &280630758 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 00d5150aebec55a4b9cafdfdf7576c58, type: 3}
@@ -9968,7 +10013,7 @@ GameObject:
   m_Component:
   - component: {fileID: 300889189}
   - component: {fileID: 300889191}
-  - component: {fileID: 300889190}
+  - component: {fileID: 300889192}
   m_Layer: 0
   m_Name: Checkpoint#2
   m_TagString: Untagged
@@ -9991,38 +10036,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 885149615}
   m_LocalEulerAnglesHint: {x: 0, y: 50.851, z: 0}
---- !u!114 &300889190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 300889188}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 052d94d9a2246584b8306bd2f04813ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  check1: {fileID: 1342078615}
-  check2: {fileID: 300889188}
-  check3: {fileID: 1380171304}
-  check4: {fileID: 274727290}
-  key: {fileID: 1575059311}
-  crossb: {fileID: 553810483}
-  linterna: {fileID: 319306827}
-  bateria: {fileID: 958724760}
-  mike: {fileID: 1775089124}
-  clue3: {fileID: 2036632464}
-  clue4: {fileID: 473744651}
-  player: {fileID: 2079050025}
-  canvaLinterna: {fileID: 1923938503}
-  enemyInt: {fileID: 1277271163}
-  lucesCoche: {fileID: 513530021}
-  campana: {fileID: 41159827}
-  enemyExt: {fileID: 1111172962}
-  finalEnemy: {fileID: 1277271164}
-  endGame: {fileID: 1328791480}
-  triggerFinal: {fileID: 1747658431}
 --- !u!65 &300889191
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10044,6 +10057,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.5, y: 1.5, z: 6.7702847}
   m_Center: {x: -0.000010088309, y: 0, z: -0.24939705}
+--- !u!114 &300889192
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300889188}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc2349149472f6e4c95839aedb1d030a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 137024967}
 --- !u!1 &303446435 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c3c5723b95e2cb048b79fe74fbe087ea, type: 3}
@@ -18359,8 +18385,8 @@ MonoBehaviour:
   keyScript: {fileID: 1575059311}
   doorScript: {fileID: 206635245}
   crossScript: {fileID: 553810483}
-  check3: {fileID: 1380171306}
-  check2: {fileID: 300889190}
+  check3: {fileID: 0}
+  check2: {fileID: 0}
   key: {fileID: 1575059310}
   crossbar: {fileID: 553810482}
   doorsExt: {fileID: 1943749191}
@@ -39937,7 +39963,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69433008e0d1e9d42925649b3eee410c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangoEnemigo: 12
+  rangoEnemigo: 10
   waypoints:
   - {fileID: 752903058}
   - {fileID: 1837817669}
@@ -45227,7 +45253,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1277271164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45240,7 +45266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 69433008e0d1e9d42925649b3eee410c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rangoEnemigo: 12
+  rangoEnemigo: 10
   waypoints:
   - {fileID: 1380180471}
   - {fileID: 1894141325}
@@ -48984,29 +49010,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1342078615}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 052d94d9a2246584b8306bd2f04813ff, type: 3}
+  m_Script: {fileID: 11500000, guid: dc2349149472f6e4c95839aedb1d030a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  check1: {fileID: 1342078615}
-  check2: {fileID: 300889188}
-  check3: {fileID: 1380171304}
-  check4: {fileID: 274727290}
-  key: {fileID: 1575059311}
-  crossb: {fileID: 553810483}
-  linterna: {fileID: 319306827}
-  bateria: {fileID: 958724760}
-  mike: {fileID: 1775089124}
-  clue3: {fileID: 2036632464}
-  clue4: {fileID: 473744651}
-  player: {fileID: 2079050025}
-  canvaLinterna: {fileID: 1923938503}
-  enemyInt: {fileID: 1277271163}
-  lucesCoche: {fileID: 513530021}
-  campana: {fileID: 41159827}
-  enemyExt: {fileID: 1111172962}
-  finalEnemy: {fileID: 1277271164}
-  endGame: {fileID: 1328791480}
-  triggerFinal: {fileID: 1747658431}
+  controller: {fileID: 137024967}
 --- !u!1 &1343041679
 GameObject:
   m_ObjectHideFlags: 0
@@ -51125,7 +51132,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1380171305}
   - component: {fileID: 1380171307}
-  - component: {fileID: 1380171306}
+  - component: {fileID: 1380171308}
   m_Layer: 0
   m_Name: Checkpoint#3
   m_TagString: Untagged
@@ -51148,38 +51155,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 885149615}
   m_LocalEulerAnglesHint: {x: 0, y: 137.865, z: 0}
---- !u!114 &1380171306
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1380171304}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 052d94d9a2246584b8306bd2f04813ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  check1: {fileID: 1342078615}
-  check2: {fileID: 300889188}
-  check3: {fileID: 1380171304}
-  check4: {fileID: 274727290}
-  key: {fileID: 1575059311}
-  crossb: {fileID: 553810483}
-  linterna: {fileID: 319306827}
-  bateria: {fileID: 958724760}
-  mike: {fileID: 1775089124}
-  clue3: {fileID: 2036632464}
-  clue4: {fileID: 473744651}
-  player: {fileID: 2079050025}
-  canvaLinterna: {fileID: 1923938503}
-  enemyInt: {fileID: 1277271163}
-  lucesCoche: {fileID: 513530021}
-  campana: {fileID: 41159827}
-  enemyExt: {fileID: 1111172962}
-  finalEnemy: {fileID: 1277271164}
-  endGame: {fileID: 1328791480}
-  triggerFinal: {fileID: 1747658431}
 --- !u!65 &1380171307
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -51201,6 +51176,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.0527897, y: 1.5, z: 3.4519823}
   m_Center: {x: 0.22361206, y: 0, z: 0.7065166}
+--- !u!114 &1380171308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1380171304}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc2349149472f6e4c95839aedb1d030a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 137024967}
 --- !u!1 &1380180470
 GameObject:
   m_ObjectHideFlags: 0
@@ -57218,8 +57206,8 @@ MonoBehaviour:
   keyScript: {fileID: 1575059311}
   doorScript: {fileID: 206635245}
   crossScript: {fileID: 553810483}
-  check3: {fileID: 1380171306}
-  check2: {fileID: 300889190}
+  check3: {fileID: 0}
+  check2: {fileID: 0}
   key: {fileID: 1575059310}
   crossbar: {fileID: 553810482}
   doorsExt: {fileID: 1943749191}
@@ -63958,7 +63946,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1747658432}
   - component: {fileID: 1747658434}
-  - component: {fileID: 1747658433}
+  - component: {fileID: 1747658435}
   m_Layer: 0
   m_Name: InicioFinal
   m_TagString: Untagged
@@ -63983,38 +63971,6 @@ Transform:
   - {fileID: 1568624980}
   m_Father: {fileID: 885149615}
   m_LocalEulerAnglesHint: {x: 0, y: 137.865, z: 0}
---- !u!114 &1747658433
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1747658431}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 052d94d9a2246584b8306bd2f04813ff, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  check1: {fileID: 1342078615}
-  check2: {fileID: 300889188}
-  check3: {fileID: 1380171304}
-  check4: {fileID: 274727290}
-  key: {fileID: 1575059311}
-  crossb: {fileID: 553810483}
-  linterna: {fileID: 319306827}
-  bateria: {fileID: 958724760}
-  mike: {fileID: 1775089124}
-  clue3: {fileID: 2036632464}
-  clue4: {fileID: 473744651}
-  player: {fileID: 2079050025}
-  canvaLinterna: {fileID: 1923938503}
-  enemyInt: {fileID: 1277271163}
-  lucesCoche: {fileID: 513530021}
-  campana: {fileID: 41159827}
-  enemyExt: {fileID: 1111172962}
-  finalEnemy: {fileID: 1277271164}
-  endGame: {fileID: 1328791480}
-  triggerFinal: {fileID: 1747658431}
 --- !u!65 &1747658434
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -64036,6 +63992,19 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 4.2807364, y: 1.9396429, z: 0.74773127}
   m_Center: {x: 0.3792016, y: -0.47340727, z: -0.50695693}
+--- !u!114 &1747658435
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1747658431}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc2349149472f6e4c95839aedb1d030a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  controller: {fileID: 137024967}
 --- !u!1 &1747683910 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: c3c5723b95e2cb048b79fe74fbe087ea, type: 3}
@@ -70623,8 +70592,8 @@ MonoBehaviour:
   keyScript: {fileID: 1575059311}
   doorScript: {fileID: 206635245}
   crossScript: {fileID: 553810483}
-  check3: {fileID: 1380171306}
-  check2: {fileID: 300889190}
+  check3: {fileID: 0}
+  check2: {fileID: 0}
   key: {fileID: 1575059310}
   crossbar: {fileID: 553810482}
   doorsExt: {fileID: 1943749191}
@@ -76804,3 +76773,4 @@ SceneRoots:
   - {fileID: 1480257319}
   - {fileID: 1391615646}
   - {fileID: 1085942718}
+  - {fileID: 137024968}
