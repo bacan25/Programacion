@@ -47,7 +47,7 @@ public class RutaEnemigo : MonoBehaviour
     {
         if(final)
         {
-            navMeshAgent.speed = agroSpeed;
+            navMeshAgent.speed = agroSpeed + 2;
             navMeshAgent.SetDestination(target.transform.position);
         }
 

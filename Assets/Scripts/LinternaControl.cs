@@ -47,7 +47,7 @@ public class LinternaControl : MonoBehaviour
 
         if (linterna.enabled && bateria > 0)
         {
-            bateria -= Time.deltaTime * 5;
+            bateria -= Time.deltaTime * 2;
             barraDeBateria.value = bateria / 100.0f;
         }
 
@@ -102,7 +102,7 @@ public class LinternaControl : MonoBehaviour
         linterna.enabled = true;
         float originalIntensity = linterna.intensity;
         linterna.intensity = 2.0f;
-        bateria -= 50;
+        bateria -= 40;
         barraDeBateria.value = bateria / 100.0f;
 
         // Verificar la distancia a todos los enemigos
