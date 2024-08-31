@@ -44,7 +44,7 @@ public class CheckpointsController : MonoBehaviour
 
     void Awake()
     {
-        //PlayerPrefs.DeleteAll();
+        PlayerPrefs.DeleteAll();
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
