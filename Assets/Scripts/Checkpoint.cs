@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CheckpointCheck : MonoBehaviour
+public class Checkpoint : MonoBehaviour
 {
     public CheckpointsController controller;
 

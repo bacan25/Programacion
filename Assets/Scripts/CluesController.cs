@@ -14,11 +14,10 @@ public class CluesController : MonoBehaviour
     [SerializeField] GameObject clue0Canva;
     [SerializeField] GameObject clue7Canva;
     [SerializeField] GameObject clue8Canva;
+    [SerializeField] GameObject clue9Canva;
 
     //Level manager
     private LevelManager levelM;
-
-    [SerializeField] private GameObject player;
 
     [SerializeField] GameObject clue0;
     //Puerta iglesia
@@ -38,20 +37,17 @@ public class CluesController : MonoBehaviour
 
     //Final
     [SerializeField] GameObject clue6;
-
     [SerializeField] GameObject clue7;
-
     [SerializeField] GameObject clue8;
 
-   
+    //Bloquea covertizo
+    [SerializeField] GameObject clue9;
+    [SerializeField] GameObject invisibleWall;
 
     void Start()
     {
         //Acceso Singleton
         levelM = LevelManager.Instance;
-        
-        //Borra Playerprefs
-        //PlayerPrefs.DeleteAll();
 
         //Verifica los guardados
         levelM.clue0Pressed = PlayerPrefs.GetInt("Clue0Pressed", 0) == 1;
@@ -63,6 +59,7 @@ public class CluesController : MonoBehaviour
         levelM.clue6Pressed = PlayerPrefs.GetInt("Clue6Pressed", 0) == 1;
         levelM.clue7Pressed = PlayerPrefs.GetInt("Clue7Pressed", 0) == 1;
         levelM.clue8Pressed = PlayerPrefs.GetInt("Clue8Pressed", 0) == 1;
+        levelM.clue9Pressed = PlayerPrefs.GetInt("Clue9Pressed", 0) == 1;
 
         if (levelM.clue0Pressed)
         {
@@ -72,6 +69,7 @@ public class CluesController : MonoBehaviour
         if (levelM.clue1Pressed)
         {
             clue1.SetActive(false); 
+            invisibleWall.SetActive(false);
         }
 
         if (levelM.clue2Pressed)
@@ -99,7 +97,7 @@ public class CluesController : MonoBehaviour
             clue6.SetActive(false); 
         }
 
-        if (levelM.clue7Pressed)
+        /* if (levelM.clue7Pressed)
         {
             clue7.SetActive(false); 
         }
@@ -107,55 +105,24 @@ public class CluesController : MonoBehaviour
         if (levelM.clue8Pressed)
         {
             clue8.SetActive(false); 
+        } */
+
+        if (levelM.clue9Pressed)
+        {
+            clue9.SetActive(false); 
         }
     }
 
     void Update()
     {
-        
+         
     }
 
 
 
-    private void OnTriggerEnter(Collider col)
-    {
-        //verifica que pista tocó
-        if (col.CompareTag("Player"))
-        {
-            switch (gameObject.name)
-            {
-                case "Clue#0":
-                    Clue0();
-                    break;
-                case "Clue#1":
-                    Clue1();
-                    break;
-                case "Clue#2":
-                    Clue2();
-                    break;
-                case "Clue#3":
-                    Clue3();
-                    break;
-                case "Clue#4":
-                    Clue4();
-                    break;
-                case "Clue#5":
-                    Clue5();
-                    break;
-                case "Clue#6":
-                    Clue6();
-                    break;
-                case "Clue#7":
-                    Clue7();
-                    break;
-                case "Clue#8":
-                    Clue8();
-                    break;
-            }
-        }
-    }
+    
 
-    void Clue0()
+    public void Clue0()
     {
         levelM.clue0Pressed = true;
         PlayerPrefs.SetInt("Clue0Pressed", levelM.clue0Pressed ? 1 : 0);
@@ -166,7 +133,7 @@ public class CluesController : MonoBehaviour
         Destroy(clue0Canva, 12f);
     }
 
-    void Clue1()
+    public void Clue1()
     {
         levelM.clue1Pressed = true;
         PlayerPrefs.SetInt("Clue1Pressed", levelM.clue1Pressed ? 1 : 0);
@@ -176,12 +143,13 @@ public class CluesController : MonoBehaviour
         clue1.SetActive(false);
 
         PlayerPrefs.Save();
-
+        invisibleWall.SetActive(false);
         Destroy(clue1Canva, 12f);
+
 
     }
 
-    void Clue2()
+    public void Clue2()
     {
         levelM.clue2Pressed = true;
         PlayerPrefs.SetInt("Clue2Pressed", levelM.clue2Pressed ? 1 : 0);
@@ -200,7 +168,7 @@ public class CluesController : MonoBehaviour
         
     }
     
-    void Clue3()
+    public void Clue3()
     {
         levelM.clue3Pressed = true;
         PlayerPrefs.SetInt("Clue3Pressed", levelM.clue3Pressed ? 1 : 0);
@@ -214,7 +182,7 @@ public class CluesController : MonoBehaviour
         Destroy(clue3Canva, 12f);
     }
     
-    void Clue4()
+    public void Clue4()
     {
         levelM.clue4Pressed = true;
         PlayerPrefs.SetInt("Clue4Pressed", levelM.clue4Pressed ? 1 : 0);
@@ -228,7 +196,7 @@ public class CluesController : MonoBehaviour
         Destroy(clue4Canva, 12f);
     }
 
-    void Clue5()
+    public void Clue5()
     {
         levelM.clue5Pressed = true;
         PlayerPrefs.SetInt("Clue5Pressed", levelM.clue5Pressed ? 1 : 0);
@@ -242,7 +210,7 @@ public class CluesController : MonoBehaviour
         Destroy(clue5Canva, 12f);
     }
 
-    void Clue6()
+    public void Clue6()
     {
         levelM.clue6Pressed = true;
         PlayerPrefs.SetInt("Clue6Pressed", levelM.clue6Pressed ? 1 : 0);
@@ -256,32 +224,63 @@ public class CluesController : MonoBehaviour
         Destroy(clue6Canva, 12f);
     }
 
-    void Clue7()
+    public void Clue7()
     {
         levelM.clue7Pressed = true;
-        PlayerPrefs.SetInt("Clue7Pressed", levelM.clue7Pressed ? 1 : 0);
+        //PlayerPrefs.SetInt("Clue7Pressed", levelM.clue7Pressed ? 1 : 0);
 
         clue7Canva.SetActive(true);
 
         clue7.SetActive(false);
 
-        PlayerPrefs.Save();
+        //PlayerPrefs.Save();
 
-        Destroy(clue7Canva, 12f);
+        //Destroy(clue7Canva, 12f);
+
+        Invoke("DeactivateCanvases", 10f);  
+        
     }
 
-    void Clue8()
+    public void Clue8()
     {
         levelM.clue8Pressed = true;
-        PlayerPrefs.SetInt("Clue8Pressed", levelM.clue8Pressed ? 1 : 0);
+        //PlayerPrefs.SetInt("Clue8Pressed", levelM.clue8Pressed ? 1 : 0);
 
         clue8Canva.SetActive(true);
 
         clue8.SetActive(false);
 
+        //PlayerPrefs.Save();
+
+        //Destroy(clue8Canva, 12f);
+
+        Invoke("DeactivateCanvases", 10f);        
+
+    }
+
+    public void Clue9()
+    {
+        levelM.clue9Pressed = true;
+        PlayerPrefs.SetInt("Clue9Pressed", levelM.clue9Pressed ? 1 : 0);
+
+        clue9Canva.SetActive(true);
+
+        clue9.SetActive(false);
+
         PlayerPrefs.Save();
 
-        Destroy(clue8Canva, 12f);
+        Destroy(clue9Canva, 20f);      
+
+    }
+
+    private void DeactivateCanvases()
+    {
+        clue7Canva.SetActive(false);
+        clue8Canva.SetActive(false);
+        clue7.SetActive(true);
+        clue8.SetActive(true);
+        
+        
     }
    
 }

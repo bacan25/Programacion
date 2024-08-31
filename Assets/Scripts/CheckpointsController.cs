@@ -95,7 +95,7 @@ public class CheckpointsController : MonoBehaviour
 
     void Update()
     {
-        // Aquí podrías agregar lógica si es necesario
+       
     }
 
 

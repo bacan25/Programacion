@@ -77,7 +77,6 @@ public class CollectibleItems : MonoBehaviour
                 case "Key":
                     if(levelM.checkpoint2Pressed)
                     {
-                       print("aja ve");
                         PickKey();
                     }
                     break;

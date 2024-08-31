@@ -28,6 +28,7 @@ public class LevelManager : MonoBehaviour
     [HideInInspector] public bool clue6Pressed = false;
     [HideInInspector] public bool clue7Pressed = false;
     [HideInInspector] public bool clue8Pressed = false;
+    [HideInInspector] public bool clue9Pressed = false;
 
     private void Awake()
     {
@@ -44,10 +45,7 @@ public class LevelManager : MonoBehaviour
 
     void Start()
     {
-        Debug.Log(checkpoint1Pressed);
-        Debug.Log(checkpoint2Pressed);
-        Debug.Log(checkpoint3Pressed);
-        Debug.Log(checkpoint4Pressed);
+
     }
 
 }
