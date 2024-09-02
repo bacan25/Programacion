@@ -1,8 +1,10 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.XR;
+using UnityEngine.XR.Interaction.Toolkit;
 
-public class LinternaControl : MonoBehaviour
+public class LinternaControlXR : MonoBehaviour
 {
     public RutaEnemigo[] enemigos; // Asignar todos los enemigos desde el Inspector
     public Light linterna;
@@ -19,16 +21,34 @@ public class LinternaControl : MonoBehaviour
 
     private bool linternaAntesDeRecargar;
     private bool isRecargando = false;
+    private XRController controller;  // Controlador XR
+    private Vector3 previousAcceleration;
+    private float shakeThreshold = 3.0f; // Umbral para detectar sacudidas
+
+    void Start()
+    {
+        // Asignar el controlador XR
+        controller = GetComponent<XRController>();
+        previousAcceleration = Vector3.zero;
+    }
 
     private void Update()
     {
         if (tieneLinterna)
         {
+            // Control de linterna tradicional (teclado)
             if (Input.GetKeyDown(KeyCode.F))
             {
                 ToggleLinterna();
             }
 
+            // Encender/Apagar linterna con controlador
+            if (controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue) && primaryButtonValue)
+            {
+                ToggleLinterna();
+            }
+
+            // Recarga con tecla R
             if (Input.GetKey(KeyCode.R) && !linterna.enabled && bateria < 100 && !isRecargando)
             {
                 StartRecargarLinterna();
@@ -39,24 +59,37 @@ public class LinternaControl : MonoBehaviour
                 StopRecargarLinterna();
             }
 
+            // Control de recarga al agitar el controlador
+            DetectarSacudida();
+
+            // Usar el flash con botón secundario del controlador
+            if (controller.inputDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue) && secondaryButtonValue && bateria > 50)
+            {
+                StartCoroutine(UsarFlash());
+            }
+
+            // Usar el flash con el botón derecho del ratón en PC
             if (Input.GetMouseButtonDown(1) && bateria > 50)
             {
                 StartCoroutine(UsarFlash());
             }
         }
 
+        // Drenar batería cuando la linterna está encendida
         if (linterna.enabled && bateria > 0)
         {
             bateria -= Time.deltaTime * 2;
             barraDeBateria.value = bateria / 100.0f;
         }
 
+        // Apagar linterna si se agota la batería
         if (bateria <= 0)
         {
             bateria = 0;
             linterna.enabled = false;
         }
 
+        // Recargar batería
         if (isRecargando && bateria < 100)
         {
             bateria += Time.deltaTime * 20;
@@ -89,11 +122,30 @@ public class LinternaControl : MonoBehaviour
         animacionRecarga.SetActive(false);
         imagenDeRecarga.gameObject.SetActive(false);
         isRecargando = false;
-        audioSource.Stop();  // Detiene el sonido de recarga
+        audioSource.Stop();
 
         if (bateria > 0 && linternaAntesDeRecargar)
         {
             linterna.enabled = true;
+        }
+    }
+
+    void DetectarSacudida()
+    {
+        if (controller.inputDevice.TryGetFeatureValue(CommonUsages.deviceAcceleration, out Vector3 acceleration))
+        {
+            Vector3 deltaAcceleration = acceleration - previousAcceleration;
+
+            if (deltaAcceleration.magnitude > shakeThreshold && bateria < 100 && !isRecargando)
+            {
+                StartRecargarLinterna();
+            }
+            else if (deltaAcceleration.magnitude <= shakeThreshold || bateria >= 100)
+            {
+                StopRecargarLinterna();
+            }
+
+            previousAcceleration = acceleration;
         }
     }
 
@@ -121,16 +173,16 @@ public class LinternaControl : MonoBehaviour
         for (int i = 0; i < 3; i++)
         {
             linterna.enabled = false;
-            audioSource.PlayOneShot(sonidoToggleLinterna);  // Reproduce el sonido al apagar
+            audioSource.PlayOneShot(sonidoToggleLinterna);
             yield return new WaitForSeconds(0.1f);
             linterna.enabled = true;
-            audioSource.PlayOneShot(sonidoToggleLinterna);  // Reproduce el sonido al encender
+            audioSource.PlayOneShot(sonidoToggleLinterna);
             yield return new WaitForSeconds(0.1f);
             linterna.enabled = false;
-            audioSource.PlayOneShot(sonidoToggleLinterna);  // Reproduce el sonido al apagar
+            audioSource.PlayOneShot(sonidoToggleLinterna);
             yield return new WaitForSeconds(0.1f);
             linterna.enabled = true;
-            audioSource.PlayOneShot(sonidoToggleLinterna);  // Reproduce el sonido al encender
+            audioSource.PlayOneShot(sonidoToggleLinterna);
             yield return new WaitForSeconds(0.1f);
         }
 
