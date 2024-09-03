@@ -15,7 +15,7 @@ public class CheckpointsController : MonoBehaviour
     //Objetos
     public CollectibleItems key;
     public CollectibleItems crossb;
-    [SerializeField] GameObject linterna;
+    //[SerializeField] GameObject linterna;
     [SerializeField] GameObject bateria;
     [SerializeField] GameObject mike;
 
