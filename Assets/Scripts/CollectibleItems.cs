@@ -5,20 +5,20 @@ using UnityEngine;
 public class CollectibleItems : MonoBehaviour
 {
     //Para especificar de que objeto se verifica el booleano
-    [SerializeField] CollectibleItems keyScript;
+    /* [SerializeField] CollectibleItems keyScript;
     [SerializeField] CollectibleItems doorScript;
     [SerializeField] CollectibleItems crossScript;
+ */
 
-
-    [SerializeField] CheckpointsController check3;
-    [SerializeField] CheckpointsController check2;
+    CheckpointsController check3;
+    CheckpointsController check2;
 
     //Level manager
     private LevelManager levelM;
 
     //triggers
-    [SerializeField] GameObject key;
-    [SerializeField] GameObject crossbar;
+    /* [SerializeField] GameObject key;
+    [SerializeField] GameObject crossbar; */
 
     //Objestos interactuables (Puertas)
     [SerializeField] GameObject doorsExt;
@@ -35,13 +35,13 @@ public class CollectibleItems : MonoBehaviour
         //PlayerPrefs.DeleteAll();
 
         //Verifica guardados
-        levelM._hasKey = PlayerPrefs.GetInt("HasKey", 0) == 1;
+        /* levelM._hasKey = PlayerPrefs.GetInt("HasKey", 0) == 1;
         levelM._hasCrossbar = PlayerPrefs.GetInt("HasCrossbar", 0) == 1;
-        levelM._hasFlash = PlayerPrefs.GetInt("HasFlashlight", 0) == 1;
+        levelM._hasFlash = PlayerPrefs.GetInt("HasFlashlight", 0) == 1; */
         levelM._extDoorOpened = PlayerPrefs.GetInt("DoorExtOpen", 0) == 1;
         levelM._intDoorOpened = PlayerPrefs.GetInt("DoorIntOpen", 0) == 1;
 
-        if (levelM._hasKey)
+       /*  if (levelM._hasKey)
         {
             key.SetActive(false);
         }
@@ -49,7 +49,7 @@ public class CollectibleItems : MonoBehaviour
         if(levelM._hasCrossbar)
         {
             crossbar.SetActive(false);
-        }
+        } */
 
         if(levelM._extDoorOpened)
         {
@@ -69,63 +69,54 @@ public class CollectibleItems : MonoBehaviour
 
     private void OnTriggerEnter(Collider col)
     {
-        //Verifica que objeto tocó
-        if (col.CompareTag("Player"))
+        
+        
+        switch (this.gameObject.name)
         {
-            switch (gameObject.name)
-            {
-                case "Key":
-                    if(levelM.checkpoint2Pressed)
-                    {
-                        PickKey();
-                    }
-                    break;
-                case "Crossbar":
-                    PickCrossbar(); 
-                    break;
-                case "DoorExt":
-                    if(levelM._hasKey)
-                    {
-                        OpenExtDoor();
-                    }
-                    break;
-                case "DoorInt":
-                    if(levelM._hasCrossbar)
-                    {
-                        OpenIntDoor();
-                    }
-                    break;
-            }
+            case "DoorExt":
+                if(levelM.checkpoint2Pressed && col.gameObject.name == "Key")
+                {
+                    OpenExtDoor();
+                }   
+                break;
+
+            case "DoorInt":
+                if(col.gameObject.name == "Crossbar")
+                {
+                    OpenIntDoor(); 
+                }
+                break;
         }
+        
 
     }
 
     //La flash tremenda mkada (Si es posible orgaizar mejor :)
-    public void PickFlash()
+    /* public void PickFlash()
     {
         levelM._hasFlash = true;
         PlayerPrefs.SetInt("HasFlashlight", levelM._hasFlash ? 1 : 0);
         levelM._hasFlash = true;
         print("Flsahlight entro al chat");
-    }
+    } */
 
-    void PickKey()
+    /* void PickKey()
     {
         levelM._hasKey = true;
         PlayerPrefs.SetInt("HasKey", levelM._hasKey ? 1 : 0);
         key.SetActive(false);
         levelM._hasKey = true;
         print("key entro al chat");
-    }
+    } */
 
-    void PickCrossbar()
+    /* void PickCrossbar()
     {
         levelM._hasCrossbar = true;
         PlayerPrefs.SetInt("HasCrossbar", levelM._hasCrossbar ? 1 : 0);
         crossbar.SetActive(false);
         levelM._hasCrossbar = true;
         print("crossbar entro al chat");
-    }
+    } */
 
     void OpenExtDoor()
     {

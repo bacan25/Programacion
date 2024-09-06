@@ -13,8 +13,8 @@ public class CheckpointsController : MonoBehaviour
     [SerializeField] GameObject check4;
 
     //Objetos
-    public CollectibleItems key;
-    public CollectibleItems crossb;
+    /* public CollectibleItems key;
+    public CollectibleItems crossb; */
     [SerializeField] GameObject linterna;
     [SerializeField] GameObject bateria;
     [SerializeField] GameObject mike;
@@ -44,7 +44,7 @@ public class CheckpointsController : MonoBehaviour
 
     void Awake()
     {
-        PlayerPrefs.DeleteAll();
+        //PlayerPrefs.DeleteAll();
         SceneManager.sceneLoaded += OnSceneLoaded;
     }
 
@@ -103,7 +103,7 @@ public class CheckpointsController : MonoBehaviour
     {
         levelM.checkpoint1Pressed = true;
         clue3.SetActive(true);
-        key.PickFlash();
+        //key.PickFlash();
 
         PlayerPrefs.SetInt("Checkpoint1Pressed", levelM.checkpoint1Pressed ? 1 : 0);
 
