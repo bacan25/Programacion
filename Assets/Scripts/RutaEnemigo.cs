@@ -67,7 +67,7 @@ public class RutaEnemigo : MonoBehaviour
         float distanceToPlayer = Vector3.Distance(transform.position, target.transform.position);
         if (distanceToPlayer <= rangoEnemigo)
         {
-            if (distanceToPlayer < 1.0f) // Ajusta la distancia según sea necesario
+            if (distanceToPlayer < 3.0f) // Ajusta la distancia según sea necesario
             {
                 videoController.PlayVideo();
             }

@@ -15,7 +15,7 @@ public class CheckpointsController : MonoBehaviour
     //Objetos
     public CollectibleItems key;
     public CollectibleItems crossb;
-    //[SerializeField] GameObject linterna;
+    [SerializeField] GameObject linterna;
     [SerializeField] GameObject bateria;
     [SerializeField] GameObject mike;
 
@@ -68,7 +68,7 @@ public class CheckpointsController : MonoBehaviour
         levelM.checkpoint3Pressed = PlayerPrefs.GetInt("Checkpoint3Pressed", 0) == 1;
         levelM.checkpoint4Pressed = PlayerPrefs.GetInt("Checkpoint4Pressed", 0) == 1;
 
-        linterna.SetActive(PlayerPrefs.GetInt("LinternaActive", 0) == 1);
+        //linterna.SetActive(PlayerPrefs.GetInt("LinternaActive", 0) == 1);
         canvaLinterna.SetActive(PlayerPrefs.GetInt("CanvaLinternaActive", 0) == 1);
         clue4.SetActive(PlayerPrefs.GetInt("Clue4", 0) == 1);
 
@@ -112,7 +112,7 @@ public class CheckpointsController : MonoBehaviour
         PlayerPrefs.SetFloat("PlayerPosZ", player.transform.position.z);
         PlayerPrefs.SetString("LastCheckpoint", SceneManager.GetActiveScene().name);
 
-        linterna.SetActive(true);
+        //linterna.SetActive(true);
         PlayerPrefs.SetInt("LinternaActive", 1);
 
         lucesCoche.SetActive(false);
@@ -194,7 +194,7 @@ public class CheckpointsController : MonoBehaviour
     public void Final()
     {
         endGame.SetActive(true);
-        linterna.SetActive(false);
+        //linterna.SetActive(false);
         bateria.SetActive(true);
         mike.SetActive(true);
         canvaLinterna.SetActive(false);
