@@ -37760,13 +37760,13 @@ MonoBehaviour:
   linterna: {fileID: 1831410399}
   tieneLinterna: 0
   bateria: 100
-  barraDeBateria: {fileID: 0}
+  barraDeBateria: {fileID: 1923938505}
   animacionRecarga: {fileID: 0}
-  imagenDeRecarga: {fileID: 0}
-  audioSource: {fileID: 0}
-  sonidoToggleLinterna: {fileID: 0}
-  sonidoRecargando: {fileID: 0}
-  sonidoFlash: {fileID: 0}
+  imagenDeRecarga: {fileID: 876732729}
+  audioSource: {fileID: 963194232}
+  sonidoToggleLinterna: {fileID: 8300000, guid: 4434a22d76f783443982c721902fa7be, type: 3}
+  sonidoRecargando: {fileID: 8300000, guid: c6a32bd9dd395334d86c86f2ec3d2df6, type: 3}
+  sonidoFlash: {fileID: 8300000, guid: 4434a22d76f783443982c721902fa7be, type: 3}
 --- !u!1 &1065410636
 GameObject:
   m_ObjectHideFlags: 0
