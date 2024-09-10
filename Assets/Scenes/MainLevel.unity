@@ -37847,10 +37847,34 @@ MonoBehaviour:
       m_Calls: []
   m_SelectEntered:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1064537172}
+        m_TargetAssemblyTypeName: LinternaControlXR, Assembly-CSharp
+        m_MethodName: OnSelectEnter
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_SelectExited:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1064537172}
+        m_TargetAssemblyTypeName: LinternaControlXR, Assembly-CSharp
+        m_MethodName: OnSelectExit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_FirstFocusEntered:
     m_PersistentCalls:
       m_Calls: []
@@ -37987,12 +38011,13 @@ MonoBehaviour:
   tieneLinterna: 0
   bateria: 100
   barraDeBateria: {fileID: 1923938505}
-  animacionRecarga: {fileID: 0}
+  animacionRecarga: {fileID: 319306827}
   imagenDeRecarga: {fileID: 876732729}
   audioSource: {fileID: 963194232}
   sonidoToggleLinterna: {fileID: 8300000, guid: 4434a22d76f783443982c721902fa7be, type: 3}
   sonidoRecargando: {fileID: 8300000, guid: c6a32bd9dd395334d86c86f2ec3d2df6, type: 3}
   sonidoFlash: {fileID: 8300000, guid: 4434a22d76f783443982c721902fa7be, type: 3}
+  isHeld: 0
 --- !u!1 &1065410636
 GameObject:
   m_ObjectHideFlags: 0
@@ -67531,6 +67556,7 @@ MonoBehaviour:
   sonidoToggleLinterna: {fileID: 8300000, guid: 4434a22d76f783443982c721902fa7be, type: 3}
   sonidoRecargando: {fileID: 8300000, guid: c6a32bd9dd395334d86c86f2ec3d2df6, type: 3}
   sonidoFlash: {fileID: 8300000, guid: 4434a22d76f783443982c721902fa7be, type: 3}
+  isHeld: 0
 --- !u!82 &1831410401
 AudioSource:
   m_ObjectHideFlags: 0
