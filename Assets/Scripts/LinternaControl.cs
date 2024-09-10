@@ -25,6 +25,8 @@ public class LinternaControlXR : MonoBehaviour
     private Vector3 previousAcceleration;
     private float shakeThreshold = 3.0f; // Umbral para detectar sacudidas
 
+    public bool isHeld = false; // Si la linterna está siendo agarrada
+
     void Start()
     {
         // Asignar el controlador XR
@@ -34,7 +36,8 @@ public class LinternaControlXR : MonoBehaviour
 
     private void Update()
     {
-        if (tieneLinterna)
+        // Solo controlar la linterna si está siendo sostenida
+        if (isHeld && tieneLinterna)
         {
             // Control de linterna tradicional (teclado)
             if (Input.GetKeyDown(KeyCode.F))
@@ -42,13 +45,13 @@ public class LinternaControlXR : MonoBehaviour
                 ToggleLinterna();
             }
 
-            // Encender/Apagar linterna con controlador
+            // Encender/Apagar linterna con el botón principal del controlador
             if (controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue) && primaryButtonValue)
             {
                 ToggleLinterna();
             }
 
-            // Recarga con tecla R
+            // Recargar con tecla R
             if (Input.GetKey(KeyCode.R) && !linterna.enabled && bateria < 100 && !isRecargando)
             {
                 StartRecargarLinterna();
@@ -73,28 +76,28 @@ public class LinternaControlXR : MonoBehaviour
             {
                 StartCoroutine(UsarFlash());
             }
-        }
 
-        // Drenar batería cuando la linterna está encendida
-        if (linterna.enabled && bateria > 0)
-        {
-            bateria -= Time.deltaTime * 2;
-            barraDeBateria.value = bateria / 100.0f;
-        }
+            // Drenar batería cuando la linterna está encendida
+            if (linterna.enabled && bateria > 0)
+            {
+                bateria -= Time.deltaTime * 2;
+                barraDeBateria.value = bateria / 100.0f;
+            }
 
-        // Apagar linterna si se agota la batería
-        if (bateria <= 0)
-        {
-            bateria = 0;
-            linterna.enabled = false;
-        }
+            // Apagar linterna si se agota la batería
+            if (bateria <= 0)
+            {
+                bateria = 0;
+                linterna.enabled = false;
+            }
 
-        // Recargar batería
-        if (isRecargando && bateria < 100)
-        {
-            bateria += Time.deltaTime * 20;
-            barraDeBateria.value = bateria / 100.0f;
-            imagenDeRecarga.transform.Rotate(0, 0, -360 * Time.deltaTime);
+            // Recargar batería
+            if (isRecargando && bateria < 100)
+            {
+                bateria += Time.deltaTime * 20;
+                barraDeBateria.value = bateria / 100.0f;
+                imagenDeRecarga.transform.Rotate(0, 0, -360 * Time.deltaTime);
+            }
         }
     }
 
@@ -191,5 +194,16 @@ public class LinternaControlXR : MonoBehaviour
         {
             linterna.enabled = false;
         }
+    }
+
+    // Métodos para saber si la linterna ha sido agarrada o soltada
+    public void OnSelectEnter(SelectEnterEventArgs args)
+    {
+        isHeld = true;  // La linterna ha sido agarrada
+    }
+
+    public void OnSelectExit(SelectExitEventArgs args)
+    {
+        isHeld = false;  // La linterna ha sido soltada
     }
 }
