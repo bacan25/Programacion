@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class EndGame : MonoBehaviour
 {
     int currentScene;
+    bool hasBoy = false;
+    bool hasBattery = false;
+
 
     void Start()
     {
@@ -14,11 +17,18 @@ public class EndGame : MonoBehaviour
 
     void OnTriggerEnter(Collider col)
     {
-        if(col.CompareTag("Player"))
+        if(col.CompareTag("Player") && hasBoy && hasBattery)
         {
-            //SceneManager.LoadScene(currentScene + 1);
             PlayerPrefs.DeleteAll();
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(0);
+
+        } else if(col.CompareTag("Bateria")){
+            hasBattery = true;
+            print(hasBattery);
+        } else if(col.CompareTag("Niño")){
+            hasBoy = true;
+            print(hasBoy);
+
         }
     }
 }

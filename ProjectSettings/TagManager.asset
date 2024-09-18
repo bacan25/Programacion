@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - enemy
+  - Bateria
+  - "Ni\xF1o"
   layers:
   - Default
   - TransparentFX
