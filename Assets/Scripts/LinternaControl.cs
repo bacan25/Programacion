@@ -25,76 +25,81 @@ public class LinternaControlXR : MonoBehaviour
     private Vector3 previousAcceleration;
     private float shakeThreshold = 3.0f; // Umbral para detectar sacudidas
 
+    private UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable grabInteractable;  // Referencia a XRGrabInteractable
+    private bool isHeld = false;  // Para verificar si la linterna está siendo agarrada
+
     void Start()
     {
         // Asignar el controlador XR
         controller = GetComponent<XRController>();
+        grabInteractable = GetComponent<UnityEngine.XR.Interaction.Toolkit.Interactables.XRGrabInteractable>();
+
+        // Subscribirse a eventos de agarre y suelta con las nuevas firmas
+        grabInteractable.selectEntered.AddListener(OnGrab);
+        grabInteractable.selectExited.AddListener(OnRelease);
+
         previousAcceleration = Vector3.zero;
     }
 
     private void Update()
     {
-        if (tieneLinterna)
+        if (isHeld) // Solo permitir controles si la linterna está siendo agarrada
         {
-            // Control de linterna tradicional (teclado)
-            if (Input.GetKeyDown(KeyCode.F))
+            if (tieneLinterna)
             {
-                ToggleLinterna();
+                // Control de linterna tradicional (teclado)
+                if (Input.GetKeyDown(KeyCode.F))
+                {
+                    ToggleLinterna();
+                }
+
+                // Encender/Apagar linterna con controlador
+                if (controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue) && primaryButtonValue)
+                {
+                    ToggleLinterna();
+                }
+
+                // Recarga con tecla R
+                if (Input.GetKey(KeyCode.R) && !linterna.enabled && bateria < 100 && !isRecargando)
+                {
+                    StartRecargarLinterna();
+                }
+
+                if (Input.GetKeyUp(KeyCode.R) || bateria >= 100)
+                {
+                    StopRecargarLinterna();
+                }
+
+                // Control de recarga al agitar el controlador
+                DetectarSacudida();
+
+                // Usar el flash con botón secundario del controlador
+                if (controller.inputDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue) && secondaryButtonValue && bateria > 50)
+                {
+                    StartCoroutine(UsarFlash());
+                }
+
+                // Usar el flash con el botón derecho del ratón en PC
+                if (Input.GetMouseButtonDown(1) && bateria > 50)
+                {
+                    StartCoroutine(UsarFlash());
+                }
             }
 
-            // Encender/Apagar linterna con controlador
-            if (controller.inputDevice.TryGetFeatureValue(CommonUsages.primaryButton, out bool primaryButtonValue) && primaryButtonValue)
+            // Drenar batería cuando la linterna está encendida
+            if (linterna.enabled && bateria > 0)
             {
-                ToggleLinterna();
+                bateria -= Time.deltaTime * 2;
+                barraDeBateria.value = bateria / 100.0f;
             }
 
-            // Recarga con tecla R
-            if (Input.GetKey(KeyCode.R) && !linterna.enabled && bateria < 100 && !isRecargando)
+            // Recargar batería
+            if (isRecargando && bateria < 100)
             {
-                StartRecargarLinterna();
+                bateria += Time.deltaTime * 20;
+                barraDeBateria.value = bateria / 100.0f;
+                imagenDeRecarga.transform.Rotate(0, 0, -360 * Time.deltaTime);
             }
-
-            if (Input.GetKeyUp(KeyCode.R) || bateria >= 100)
-            {
-                StopRecargarLinterna();
-            }
-
-            // Control de recarga al agitar el controlador
-            DetectarSacudida();
-
-            // Usar el flash con botón secundario del controlador
-            if (controller.inputDevice.TryGetFeatureValue(CommonUsages.secondaryButton, out bool secondaryButtonValue) && secondaryButtonValue && bateria > 50)
-            {
-                StartCoroutine(UsarFlash());
-            }
-
-            // Usar el flash con el botón derecho del ratón en PC
-            if (Input.GetMouseButtonDown(1) && bateria > 50)
-            {
-                StartCoroutine(UsarFlash());
-            }
-        }
-
-        // Drenar batería cuando la linterna está encendida
-        if (linterna.enabled && bateria > 0)
-        {
-            bateria -= Time.deltaTime * 2;
-            barraDeBateria.value = bateria / 100.0f;
-        }
-
-        // Apagar linterna si se agota la batería
-        if (bateria <= 0)
-        {
-            bateria = 0;
-            linterna.enabled = false;
-        }
-
-        // Recargar batería
-        if (isRecargando && bateria < 100)
-        {
-            bateria += Time.deltaTime * 20;
-            barraDeBateria.value = bateria / 100.0f;
-            imagenDeRecarga.transform.Rotate(0, 0, -360 * Time.deltaTime);
         }
     }
 
@@ -165,7 +170,7 @@ public class LinternaControlXR : MonoBehaviour
                 float distanceToEnemy = Vector3.Distance(transform.position, enemigo.transform.position);
                 if (distanceToEnemy <= enemigo.GetRangoEnemigo())
                 {
-                    enemigo.StunEnemy(2);  // Stun al enemigo por 8 segundos
+                    enemigo.StunEnemy(2);  // Stun al enemigo por 2 segundos
                 }
             }
         }
@@ -190,6 +195,21 @@ public class LinternaControlXR : MonoBehaviour
         if (bateria <= 0)
         {
             linterna.enabled = false;
+        }
+    }
+
+    // Método llamado cuando la linterna es agarrada
+    void OnGrab(SelectEnterEventArgs args)
+    {
+        isHeld = true;  // La linterna está siendo agarrada
+    }
+
+    // Método llamado cuando la linterna es soltada
+    void OnRelease(SelectExitEventArgs args)
+    {
+        if (!args.isCanceled)
+        {
+            isHeld = false;  // La linterna ha sido soltada
         }
     }
 }
