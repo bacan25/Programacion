@@ -74,7 +74,7 @@ public class CollectibleItems : MonoBehaviour
         switch (this.gameObject.name)
         {
             case "DoorExt":
-                if(levelM.checkpoint2Pressed && col.gameObject.name == "Key")
+                if(col.gameObject.name == "Key")
                 {
                     OpenExtDoor();
                 }   

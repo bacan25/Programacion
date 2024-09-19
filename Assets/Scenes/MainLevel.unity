@@ -10130,7 +10130,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &294745406
 Transform:
   m_ObjectHideFlags: 0
@@ -10366,7 +10366,7 @@ Transform:
   m_GameObject: {fileID: 300889188}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: 0.42933863, z: -0, w: 0.90314364}
-  m_LocalPosition: {x: 54.352, y: 11.366, z: -44.229}
+  m_LocalPosition: {x: 54.21, y: 11.14, z: -44.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -18210,7 +18210,7 @@ GameObject:
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &519754451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -18240,7 +18240,7 @@ MonoBehaviour:
   m_OverrideVoxelSize: 0
   m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
-  m_NavMeshData: {fileID: 23800000, guid: fb6d39fb2c647a548a46a9ec8b78f4ec, type: 2}
+  m_NavMeshData: {fileID: 0}
   m_BuildHeightMesh: 0
 --- !u!64 &519754452
 MeshCollider:
@@ -23306,7 +23306,7 @@ Transform:
   m_GameObject: {fileID: 652510293}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: -0.3420201, z: 0, w: 0.9396927}
-  m_LocalPosition: {x: 27.73, y: 2.82, z: -7.9}
+  m_LocalPosition: {x: 27.69, y: 2.18, z: -7.85}
   m_LocalScale: {x: 1.8229755, y: 1, z: 2.5010037}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46727,7 +46727,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6232745470614056090, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_Height
-      value: 2.72
+      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 9173983156334026967, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
       propertyPath: m_IsActive
@@ -50590,7 +50590,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1328791481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70723,7 +70723,7 @@ Light:
   m_Color: {r: 0.8113208, g: 0.7582788, b: 0.5166429, a: 1}
   m_Intensity: 5
   m_Range: 70
-  m_SpotAngle: 55
+  m_SpotAngle: 52
   m_InnerSpotAngle: 1
   m_CookieSize: 10
   m_Shadows:
@@ -74781,8 +74781,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.57672155, y: 0.7513056, z: 1}
-  m_Center: {x: -0.21163924, y: -0.12434721, z: 0.0000000014283144}
+  m_Size: {x: 0.57672155, y: 2.3140306, z: 1.653665}
+  m_Center: {x: -0.21163924, y: 0.6570153, z: 0.043808278}
 --- !u!114 &1943749194
 MonoBehaviour:
   m_ObjectHideFlags: 0
