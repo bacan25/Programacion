@@ -13,6 +13,8 @@ public class RutaEnemigo : MonoBehaviour
     [SerializeField] private AudioClip sonidoEstatica;  // Sonido constante de estática
     [SerializeField] private VideoController videoController; // Referencia al VideoController
 
+    [SerializeField] private Camera playerCamera; // Asignar la cámara del jugador en el inspector
+
     private int currentWaypoint;
     private NavMeshAgent navMeshAgent;
     private bool isStunned = false;
@@ -45,7 +47,7 @@ public class RutaEnemigo : MonoBehaviour
 
     void Update()
     {
-        if(final)
+        if (final)
         {
             navMeshAgent.speed = agroSpeed + 2;
             navMeshAgent.SetDestination(target.transform.position);
@@ -69,7 +71,9 @@ public class RutaEnemigo : MonoBehaviour
         {
             if (distanceToPlayer < 3.0f) // Ajusta la distancia según sea necesario
             {
+                // Reproduce el video y oscurece la cámara
                 videoController.PlayVideo();
+                StartCoroutine(FadeToBlack());
             }
             else
             {
@@ -84,8 +88,8 @@ public class RutaEnemigo : MonoBehaviour
 
     void AgroMode()
     {
-        anim.SetBool("isWalking",false);
-        anim.SetBool("isAgro",true);
+        anim.SetBool("isWalking", false);
+        anim.SetBool("isAgro", true);
         navMeshAgent.speed = agroSpeed;
         navMeshAgent.SetDestination(target.transform.position);
     }
@@ -94,8 +98,8 @@ public class RutaEnemigo : MonoBehaviour
     {
         if (!navMeshAgent.pathPending && navMeshAgent.remainingDistance <= navMeshAgent.stoppingDistance)
         {
-            anim.SetBool("isWalking",true);
-            anim.SetBool("isAgro",false);
+            anim.SetBool("isWalking", true);
+            anim.SetBool("isAgro", false);
             navMeshAgent.speed = moveSpeed;
             currentWaypoint++;
             if (currentWaypoint >= waypoints.Length)
@@ -111,7 +115,7 @@ public class RutaEnemigo : MonoBehaviour
     {
         if (!isStunned)
         {
-            audioSource.PlayOneShot(sonidoStun, 1.0f);  // Incrementa el segundo parámetro para aumentar el volumen del sonido de stun
+            audioSource.PlayOneShot(sonidoStun, 1.0f);
             StartCoroutine(Stun(duration));
         }
     }
@@ -120,12 +124,70 @@ public class RutaEnemigo : MonoBehaviour
     {
         isStunned = true;
         anim.SetTrigger("isStuned");
-        anim.SetBool("isAgro",false);
-        anim.SetBool("isWalking",false);
+        anim.SetBool("isAgro", false);
+        anim.SetBool("isWalking", false);
         navMeshAgent.isStopped = true;
-        audioSource.PlayOneShot(sonidoStun);  // Reproducir el sonido de stun
+        audioSource.PlayOneShot(sonidoStun);
         yield return new WaitForSeconds(duration);
         navMeshAgent.isStopped = false;
         isStunned = false;
+    }
+
+    // Corrutina para oscurecer la cámara
+    IEnumerator FadeToBlack()
+    {
+        // Crear una imagen negra que cubra la cámara
+        GameObject blackOverlay = new GameObject("BlackOverlay");
+        blackOverlay.transform.SetParent(playerCamera.transform);
+        blackOverlay.transform.localPosition = Vector3.zero;
+        blackOverlay.transform.localRotation = Quaternion.identity;
+
+        // Crear un quad frente a la cámara
+        MeshRenderer renderer = blackOverlay.AddComponent<MeshRenderer>();
+        MeshFilter filter = blackOverlay.AddComponent<MeshFilter>();
+        filter.mesh = CreateQuadMesh();
+
+        // Posicionarlo justo frente a la cámara
+        blackOverlay.transform.localPosition = new Vector3(0, 0, 0.1f);
+
+        // Material negro
+        Material blackMaterial = new Material(Shader.Find("Unlit/Color"));
+        blackMaterial.color = new Color(0, 0, 0, 0); // Comienza transparente
+        renderer.material = blackMaterial;
+
+        float fadeDuration = 1.0f; // Duración del fade
+        float fadeProgress = 0.0f;
+
+        // Fade progresivo a negro
+        while (fadeProgress < fadeDuration)
+        {
+            fadeProgress += Time.deltaTime;
+            blackMaterial.color = new Color(0, 0, 0, Mathf.Lerp(0, 1, fadeProgress / fadeDuration));
+            yield return null;
+        }
+
+        // Mantener el negro un poco antes de reiniciar
+        yield return new WaitForSeconds(2.0f);
+        Destroy(blackOverlay);  // Destruir el overlay al finalizar
+    }
+
+    // Método para crear un quad
+    Mesh CreateQuadMesh()
+    {
+        Mesh mesh = new Mesh();
+        mesh.vertices = new Vector3[] {
+            new Vector3(-1, -1, 0),
+            new Vector3(1, -1, 0),
+            new Vector3(-1, 1, 0),
+            new Vector3(1, 1, 0)
+        };
+        mesh.uv = new Vector2[] {
+            new Vector2(0, 0),
+            new Vector2(1, 0),
+            new Vector2(0, 1),
+            new Vector2(1, 1)
+        };
+        mesh.triangles = new int[] { 0, 2, 1, 2, 3, 1 };
+        return mesh;
     }
 }
